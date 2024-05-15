@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
-export const BalanceSection = styled.section``;
+export const BalanceSection = styled.section`
+  display: flex;
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 1280px) {
+    justify-content: flex-end;
+  }
+`;
 export const BalanceForm = styled.form``;
 export const BalanceText = styled.label`
   font-family: Roboto;
@@ -37,7 +50,7 @@ export const ReportText = styled.p``;
 export const ReportIcon = styled.svg``;
 
 export const SectionBar = styled.svg`
-  @media (max - width: 767px) {
+  @media (max-width: 767px) {
     width: ;
     height: ;
     padding: ;
@@ -49,3 +62,11 @@ export const SectionBar = styled.svg`
   @media (min-width: 1280px) {
   }
 `;
+// @media (max-width: 767px) {
+
+// }
+
+// @media (min-width: 768px) {
+// }
+// @media (min-width: 1280px) {
+// }

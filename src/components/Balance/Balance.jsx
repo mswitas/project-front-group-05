@@ -17,6 +17,8 @@ import {
   ReportText,
 } from "./Balance.styled";
 
+import icons from '../../../assets/icons.svg'
+
 const BalanceBar = () => {
   return (
     <BalanceSection>
@@ -33,7 +35,7 @@ const BalanceBar = () => {
       <ReportBox>
         <ReportText>Reports</ReportText>
         <ReportIcon>
-          <use href="../../../assets/icons.svg#reports"></use>
+          <use href={`${icons}#reports`}></use>
         </ReportIcon>
       </ReportBox>
     </BalanceSection>
