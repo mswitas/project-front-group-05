@@ -17,7 +17,7 @@ import {
   ReportText,
 } from "./Balance.styled";
 
-import icons from '../../../assets/icons.svg'
+import icons from '../../assets/icons.svg'
 
 const BalanceBar = () => {
   return (
