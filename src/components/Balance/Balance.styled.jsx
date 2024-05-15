@@ -30,7 +30,7 @@ export const BalanceInput = styled.input`
   }
 `;
 
-export const BalanceButton = styled.buttom``;
+export const BalanceButton = styled.button``;
 
 export const ReportBox = styled.div``;
 export const ReportText = styled.p``;
