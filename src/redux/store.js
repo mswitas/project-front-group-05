@@ -11,15 +11,15 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-// import { userReducer } from "./user/slice";
-// const authPersistConfig = {
-//   key: "auth",
-//   storage,
-//   whitelist: ["token"],
-// };
+import { userReducer } from "./user/userSlice";
+const authPersistConfig = {
+  key: "auth",
+  storage,
+  whitelist: ["token"],
+};
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { user: userReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
