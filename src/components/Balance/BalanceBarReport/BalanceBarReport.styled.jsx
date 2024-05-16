@@ -26,27 +26,24 @@ export const BalanceForm = styled.form`
   @media (max-width: 767px) {
     flex-direction: column;
     gap: 8px;
+    margin-top:16px;
   }
 
   @media (min-width: 768px) {
-    gap: 12px;
+    gap: 20px;
     align-items: center;
+     margin-top:0px;
 }
-  }
-  @media (min-width: 1280px) {
   }
 `;
 export const BalanceBox = styled.div`
   display: flex;
   @media (max-width: 767px) {
-    width: 280px;
     gap: 0px;
   }
 
-  @media (min-width: 768px) {
-    gap: 15px;
-  }
   @media (min-width: 1280px) {
+    gap: 16px;
   }
 `;
 export const BalanceText = styled.label`
@@ -57,14 +54,6 @@ export const BalanceText = styled.label`
   letter-spacing: 0.02em;
   text-align: center;
   color: #52555fb2;
-  @media (min-width: 768px) {
-    width: 83px;
-    text-align: right;
-    height: 20px;
-  }
-  @media (min-width: 1280px) {
-    width: auto;
-  }
 `;
 export const BalanceInput = styled.input`
   box-sizing: border-box;
@@ -83,8 +72,8 @@ export const BalanceInput = styled.input`
     color: #000000;
   }
   @media (max-width: 767px) {
-    width: 140px;
-    border-radius: 16px 0px 0px 16px;
+    width: 183px;
+    border-radius: 16px;
   }
 
   @media (min-width: 768px) {
@@ -122,50 +111,19 @@ export const BalanceButton = styled.button`
   }
 
   @media (max-width: 767px) {
-    width: 140px;
+    display: none;
     border-radius: 0px 16px 16px 0px;
     border-left: 0px;
   }
 
   @media (min-width: 768px) {
+    display: none;
     border-radius: 16px;
-    width: 125px;
   }
   @media (min-width: 1280px) {
     width: 125px;
+    display: inline-block;
   }
-`;
-
-export const ReportBox = styled.div`
-  display: flex;
-  gap: 15px;
-  @media (max-width: 767px) {
-    width: 84px;
-    height: 24px;
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
-  @media (min-width: 1280px) {
-  }
-`;
-export const ReportText = styled.p`
-  font-family: Roboto;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14.06px;
-  letter-spacing: 0.04em;
-  color: #52555fb2;
-  padding: 0px;
-  margin: 0px;
-  padding-top: 7px;
-`;
-export const ReportIcon = styled.svg`
-  width: 14px;
-  height: 14px;
-  padding: 5px;
-  text-align: center;
 `;
 
 export const SectionBar = styled.svg`
