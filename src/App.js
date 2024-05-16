@@ -1,8 +1,8 @@
 import "./App.css";
-import BalanceBar from "./components/Balance/Balance";
+import BalanceReports from "./components/Balance/BalanceReports/BalanceReports";
 
 function App() {
-  return <BalanceBar />;
+  return <BalanceReports />;
 }
 
 export default App;

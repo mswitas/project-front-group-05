@@ -8,30 +8,18 @@
 
 import {
   BalanceSection,
-  BalanceForm,
-  BalanceText,
-  BalanceInput,
-  BalanceButton,
   ReportBox,
   ReportIcon,
   ReportText,
 } from "./Balance.styled";
 
-import icons from '../../assets/icons.svg'
+import BalanceBar from "../BalanceBar/BalanceBar";
+import icons from "../../../assets/icons.svg";
 
-const BalanceBar = () => {
+const Balance = () => {
   return (
     <BalanceSection>
-      <BalanceForm autoComplete="off">
-        <BalanceText id="bilans">Balance:</BalanceText>
-        <BalanceInput
-          id="bilans"
-          name="bilans"
-          type="number"
-          placeholder="00.00 PLN"
-        />
-        <BalanceButton type="submit">CONFIRM</BalanceButton>
-      </BalanceForm>
+      <BalanceBar />
       <ReportBox>
         <ReportText>Reports</ReportText>
         <ReportIcon>
@@ -41,4 +29,4 @@ const BalanceBar = () => {
     </BalanceSection>
   );
 };
-export default BalanceBar;
+export default Balance;
