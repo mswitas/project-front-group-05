@@ -3,9 +3,9 @@ import {
   MainPageLink,
   MainPageText,
   MainPageIcon,
-  MonthSlider,
   MobileWrapper,
 } from "./BalanceReports.styled";
+import MonthsPaginator from "../../MonthsPaginator/MonthsPaginator";
 
 import BalanceBarReport from "../BalanceBarReport/BalanceBarReport";
 import icons from "../../../assets/icons.svg";
@@ -19,10 +19,10 @@ const BalanceReports = () => {
         </MainPageIcon>
 
         <MainPageText>Main page</MainPageText>
-      </MainPageLink>{" "}
+      </MainPageLink>
       <MobileWrapper>
         <BalanceBarReport />
-        <MonthSlider>Monthss</MonthSlider>
+        <MonthsPaginator />
       </MobileWrapper>
     </BalanceSection>
   );

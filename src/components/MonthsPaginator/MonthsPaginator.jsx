@@ -2,33 +2,33 @@ import {
   ComponentWrapper,
   PaginatorTitile,
   PaginatorWrapper,
-  PaginatorWrapper,
   PaginatorArrow,
   MonthsDisplayer,
   PaginatorButton,
 } from "./MonthsPaginator.styled";
 
+import icons from "../../assets/icons.svg";
+
 const MonthsPaginator = () => {
   return (
-      <ComponentWrapper>
-          
+    <ComponentWrapper>
       <PaginatorTitile>Current period:</PaginatorTitile>
-          <PaginatorWrapper>
-              
+      <PaginatorWrapper>
         <PaginatorButton>
-          <PaginatorArrow></PaginatorArrow>
+          <PaginatorArrow>
+            <use href={`${icons}#left-month-arrow`}></use>
+          </PaginatorArrow>
         </PaginatorButton>
 
-        <MonthsDisplayer></MonthsDisplayer>
+        <MonthsDisplayer>SampleMonth</MonthsDisplayer>
 
         <PaginatorButton>
-          <PaginatorArrow></PaginatorArrow>
-              </PaginatorButton>
-              
-          </PaginatorWrapper>
-          
+          <PaginatorArrow>
+            <use href={`${icons}#right-month-arrow`}></use>
+          </PaginatorArrow>
+        </PaginatorButton>
+      </PaginatorWrapper>
     </ComponentWrapper>
   );
 };
 export default MonthsPaginator;
-

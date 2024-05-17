@@ -52,10 +52,7 @@ export const MainPageIcon = styled.svg`
   padding-inline: 3px;
   padding-block: 6px;
 `;
-export const MonthSlider = styled.div`
-  width: 136px;
-  height: 39px;
-`;
+
 export const MobileWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
