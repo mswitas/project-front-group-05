@@ -21,9 +21,17 @@ export const BalanceSection = styled.section`
   }
 `;
 export const MainPageLink = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  cursor: pointer;
+  @media screen and (max-width: 767px) {
+    width: 100vw;
+    text-align: left;
+  }
+  @media screen and (min-width: 768px) {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
 `;
 export const MainPageText = styled.p`
   font-family: Roboto;
@@ -47,4 +55,14 @@ export const MainPageIcon = styled.svg`
 export const MonthSlider = styled.div`
   width: 136px;
   height: 39px;
+`;
+export const MobileWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 30vw;
+  }
 `;

@@ -2,8 +2,9 @@ import {
   BalanceSection,
   MainPageLink,
   MainPageText,
-    MainPageIcon,
-  MonthSlider
+  MainPageIcon,
+  MonthSlider,
+  MobileWrapper,
 } from "./BalanceReports.styled";
 
 import BalanceBarReport from "../BalanceBarReport/BalanceBarReport";
@@ -16,10 +17,13 @@ const BalanceReports = () => {
         <MainPageIcon>
           <use href={`${icons}#back-arrow`}></use>
         </MainPageIcon>
+
         <MainPageText>Main page</MainPageText>
-      </MainPageLink>
-          <BalanceBarReport />
-          <MonthSlider>Monthss</MonthSlider>
+      </MainPageLink>{" "}
+      <MobileWrapper>
+        <BalanceBarReport />
+        <MonthSlider>Monthss</MonthSlider>
+      </MobileWrapper>
     </BalanceSection>
   );
 };
