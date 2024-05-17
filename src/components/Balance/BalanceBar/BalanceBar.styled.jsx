@@ -170,14 +170,6 @@ export const ReportIcon = styled.svg`
 
 export const SectionBar = styled.svg`
   @media (max-width: 767px) {
-    width: ;
-    height: ;
-    padding: ;
     margin-bottom: 8px;
-  }
-
-  @media (min-width: 768px) {
-  }
-  @media (min-width: 1280px) {
   }
 `;
