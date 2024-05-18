@@ -13,14 +13,19 @@ export const PaginatorTitile = styled.p`
   letter-spacing: 0.04em;
   text-align: center;
   color: #52555fb2;
+  margin: 0px;
+  padding-bottom: 5px;
 `;
 
 export const PaginatorWrapper = styled.div`
-display:flex`;
+  display: flex;
+  justify-content: center;
+`;
 
 export const PaginatorArrow = styled.svg`
-  width: 4px;
-  height: 10px;
+  width: 8px;
+  height: 12px;
+  display: flex;
 `;
 
 export const MonthsDisplayer = styled.p`
@@ -31,10 +36,12 @@ export const MonthsDisplayer = styled.p`
   letter-spacing: 0.02em;
   text-align: center;
   color: #000000;
+  margin: 2px;
 `;
 
 export const PaginatorButton = styled.button`
   border: 0px;
+  padding: 0px;
   outline: none;
   background: inherit;
 `;

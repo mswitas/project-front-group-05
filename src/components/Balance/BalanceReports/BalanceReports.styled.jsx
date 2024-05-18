@@ -60,6 +60,7 @@ export const MobileWrapper = styled.div`
   gap: 16px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    gap: 30vw;
+    gap: 25vw;
+    background: #f2f5fc;
   }
 `;
