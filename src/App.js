@@ -1,3 +1,4 @@
+
 import { Routes, Route } from "react-router-dom";
 import * as React from "react";
 import "./App.css";
@@ -17,6 +18,6 @@ function App() {
       </Routes>
     </ChakraProvider>
   );
-}
+
 
 export default App;
