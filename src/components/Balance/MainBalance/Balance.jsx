@@ -14,9 +14,11 @@ const Balance = () => {
       <BalanceBar />
       <ReportBox>
         <ReportText>Reports</ReportText>
-        <ReportIcon>
-          <use href={`${icons}#reports`}></use>
-        </ReportIcon>
+        <NavLink>
+          <ReportIcon to="/reports">
+            <use href={`${icons}#reports`}></use>
+          </ReportIcon>
+        </NavLink>
       </ReportBox>
     </BalanceSection>
   );

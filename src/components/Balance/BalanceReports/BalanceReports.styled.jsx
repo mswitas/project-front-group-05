@@ -20,7 +20,7 @@ export const BalanceSection = styled.section`
     justify-content: space-between;
   }
 `;
-export const MainPageLink = styled.a`
+export const MainPageLink = styled(NavLink)`
   cursor: pointer;
   @media screen and (max-width: 767px) {
     width: 100vw;

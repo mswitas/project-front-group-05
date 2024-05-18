@@ -13,7 +13,7 @@ import icons from "../../../assets/icons.svg";
 const BalanceReports = () => {
   return (
     <BalanceSection>
-      <MainPageLink>
+      <MainPageLink to="/">
         <MainPageIcon>
           <use href={`${icons}#back-arrow`}></use>
         </MainPageIcon>
