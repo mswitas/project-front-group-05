@@ -21,6 +21,7 @@ export const BalanceSection = styled.section`
   }
 `;
 export const MainPageLink = styled(NavLink)`
+  text-decoration: none;
   cursor: pointer;
   @media screen and (max-width: 767px) {
     width: 100vw;

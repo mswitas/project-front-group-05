@@ -3,6 +3,7 @@ import {
   ReportBox,
   ReportIcon,
   ReportText,
+  Link
 } from "./Balance.styled";
 
 import BalanceBar from "../BalanceBar/BalanceBar";
@@ -14,11 +15,11 @@ const Balance = () => {
       <BalanceBar />
       <ReportBox>
         <ReportText>Reports</ReportText>
-        <NavLink>
-          <ReportIcon to="/reports">
+        <Link to='/reports'>
+          <ReportIcon >
             <use href={`${icons}#reports`}></use>
           </ReportIcon>
-        </NavLink>
+        </Link>
       </ReportBox>
     </BalanceSection>
   );

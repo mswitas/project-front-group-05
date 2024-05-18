@@ -13,13 +13,13 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}>
-      <PersistGate loading={<Loader />} persistor={persistor}>
-        <BrowserRouter basename="/kapusta"> */}
-          <App />
-        {/* </BrowserRouter>
-      </PersistGate>
-    </Provider> */}
+   {/* <Provider store={store}> */}
+      {/* <PersistGate loading={<Loader />} persistor={persistor}>  */}
+    <BrowserRouter basename="/project-front-group-05">
+      <App />
+    </BrowserRouter>
+     {/* </PersistGate> */}
+    {/* </Provider> */}
   </React.StrictMode>
 );
 
