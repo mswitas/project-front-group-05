@@ -1,0 +1,320 @@
+.first_container {
+  background-color: #f2f5fc;
+  min-width: 320px;
+  height: 352px;
+  border-radius: 0 0 0 140px;
+}
+
+.month_box {
+  margin-top: 25px;
+  text-align: center;
+  display: flex;
+  margin-left: 85px;
+  flex-direction: row;
+  min-width: 136px;
+  height: 39px;
+}
+
+.report_button {
+  font-size: 12px;
+}
+
+.button_div {
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+}
+.month_span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.period_paragraph {
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+.first_box_header {
+  font-weight: 400;
+  font-size: 12px;
+  display: block;
+}
+.second_box_header {
+  display: block;
+  width: 183px;
+  height: 44px;
+  border-radius: 22px;
+  border: 2px solid #fff;
+  padding-block: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.first_box_header,
+.second_box_header {
+  margin-inline: auto;
+}
+.textbox {
+  width: 100%;
+  display: flex;
+  margin-top: 45px;
+  flex-direction: column;
+}
+.back_arrow {
+  margin-top: 20px;
+}
+.balance_box {
+  height: 85px;
+  width: 280px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 2;
+  margin-top: -50px;
+  box-shadow: 8px 8px 24px -9px rgba(66, 68, 90, 1);
+}
+
+.expense_box,
+.income_box {
+  width: 140px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.expense_box {
+  border-right: 2px solid lightgray;
+}
+
+.expense_header,
+.income_header,
+.expense_text,
+.income_text {
+  font-size: 14px;
+  font-weight: 700;
+}
+.expense_header {
+  color: red;
+}
+.income_header {
+  color: green;
+}
+.switcher_box {
+  margin-top: 60px;
+  margin-inline: auto;
+  width: 134px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.expenses_icon_container,
+.income_icon_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.expenses_icon_container {
+  height: 800px;
+}
+
+.income_icon_container {
+  height: 200px;
+}
+
+.icon_box {
+  max-height: 122px;
+  min-width: 84px;
+  max-width: 103px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.icon_text {
+  font-size: 12px;
+  color: gray;
+  text-align: center;
+}
+.expenses_svg,
+.income_svg {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.expenses_svg:active,
+.income_svg:active {
+  fill: orange;
+}
+
+.icon_link {
+  min-width: 56px;
+  min-height: 56px;
+  background-color: #f2f5fc;
+  border-radius: 50%;
+}
+
+.icon_button:active {
+  fill: orange;
+}
+
+.icon_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50px;
+}
+.icon_link:active > .expenses_svg,
+.icon_link:active > .income_svg {
+  fill: none;
+  color: orange;
+  stroke: #ff751d;
+}
+
+.icon_link:active {
+  background-color: #ffdac0;
+  opacity: 0.5;
+}
+
+.back_to_main_text {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .first_container {
+    border-radius: 0 0 0 150px;
+    min-width: 768px;
+    min-height: 527px;
+    display: flex;
+    flex-direction: row;
+  }
+  .back_to_main_text {
+    margin-top: 23px;
+    display: flex;
+    align-items: center;
+    min-width: 60px;
+    height: 14px;
+    font-size: 12px;
+    color: lightgray;
+    text-align: center;
+  }
+  .back_icon_box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+  }
+  .back_icon_box:active {
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+  .button_box {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    min-width: 704px;
+    padding-inline: 0;
+    margin-inline: auto;
+  }
+  .balance_box {
+    margin-top: -400px;
+    width: 704px;
+    height: 50px;
+  }
+  .month_box {
+    margin-top: 0;
+    min-width: 136px;
+    height: 39px;
+    margin-inline: auto;
+  }
+  .textbox {
+    margin-top: 0;
+    width: 228px;
+    height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .back_icon_box {
+    margin-top: 0;
+  }
+  .back_arrow {
+    margin-top: -5px;
+  }
+  .back_to_main_text {
+    margin-top: 10px;
+  }
+  .expense_box,
+  .income_box {
+    flex-direction: row;
+    min-width: 198px;
+    gap: 10px;
+  }
+  .back_button_container {
+    max-width: 704px;
+  }
+  .main_icons_container {
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 8px 8px 29px -10px rgba(66, 68, 90, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-height: 348px;
+    max-width: 704px;
+    margin-top: 40px;
+    margin-inline: auto;
+  }
+  .chakra_container {
+    min-width: 100%;
+  }
+  .switcher_box {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .data_container {
+    min-width: 704px;
+    min-height: 422px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 24px -12px rgba(66, 68, 90, 1);
+    background-color: white;
+    margin-top: 120px;
+  }
+  .expenses_icon_container {
+    min-width: 704px;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .first_container {
+    min-width: 1280px;
+  }
+}
