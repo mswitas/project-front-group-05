@@ -2,6 +2,7 @@
   "name": "project-front-group-05",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://mswitas.github.io/project-front-group-05",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -10,7 +11,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "prop-types": "^15.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,6 +41,14 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "vite": "^5.2.0"
   }
 }

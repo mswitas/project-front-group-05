@@ -1,0 +1,111 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+@media (min-width: 772px) {
+  .transactionsWindow {
+    background: #fff;
+    border-radius: 0px 30px 30px 30px;
+    box-shadow: 0px 10px 60px 0px #aab2c533;
+    padding: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 772px) {
+  .tablet {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .desktopView {
+    display: flex;
+    gap: 70px;
+  }
+
+  .tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 771px) {
+  .container {
+    /* max-width: 320px; */
+    padding: 32px;
+  }
+}
+
+@media (min-width: 772px) {
+  .container {
+    /* max-width: 772px; */
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    /* max-width: 1280px; */
+    padding: 50px;
+  }
+}
+
+/* Mobile add transaction button */
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btnIcon {
+  fill: var(--brand-color);
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  transition: transform 0.2s;
+}
+
+.btnWrapper:hover .icon {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.btnText {
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #000;
+}
+
+.formDesktop {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 772px) {
+  .btnWrapper {
+    display: none;
+  }
+
+  .mobileForm {
+    display: none;
+  }
+}
+
+@media (max-width: 771px) {
+  .formDesktop {
+    display: none;
+  }
+}
