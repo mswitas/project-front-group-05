@@ -1,15 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-};
-:root{
---color-background: rgba(255, 255, 255, 1);
---color-background: rgba(0, 0, 0, 1);
---color-background: rgba(251, 124, 47, 1);
---color-background: rgba(251, 124, 47, 0.2);
-}
-
 .header-border {
     border-bottom: 1px solid var(--color-border);
     display: flex;
