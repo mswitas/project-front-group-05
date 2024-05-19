@@ -1,8 +1,8 @@
 import {
-   HeaderBorder,
-   LogoHeader,
-   LogoWebFont,
-   NavMenu,
+   headerborder,
+   logoheader,
+   logokapustafont,
+   navmenu,
 } from "../header/header.styled";
 
 import icons from "../../assets/icons.svg";
