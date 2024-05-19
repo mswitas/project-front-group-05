@@ -17,7 +17,7 @@ export const fetchUser = createAsyncThunk(
     try {
       const state = getState();
       const accessToken = state.auth.token;
-      setToken(accessToken);
+      setAuthHeader(accessToken);
       const response = await axios.get("/user");
       return response;
     } catch (error) {
@@ -33,7 +33,7 @@ export const register = createAsyncThunk(
       const response = await axios.post("/auth/register", credentials);
       if (response) {
         try {
-          const results = await instance.post("/auth/login", credentials);
+          const results = await axios.post("/auth/login", credentials);
           setAuthHeader(results.data.accessToken);
           return results.data;
         } catch (error) {
