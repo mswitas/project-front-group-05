@@ -45,6 +45,7 @@ const Summary = () => {
 
   const incomeData = useSelector(selectIncomeSummary);
   const expensesData = useSelector(selectExpensesSummary);
+  const isLoading = useSelector(selectIsLoading);
   let data;
 
   if (location.pathname === "/income") {
