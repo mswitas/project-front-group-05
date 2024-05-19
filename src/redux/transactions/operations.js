@@ -1,8 +1,38 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { getUserBalance } from "../auth/operations";
 
-axios.defaults.baseURL = "";
+axios.defaults.baseURL = "https://demokraci-kapusta.onrender.com/";
+
+export const updateBalance = createAsyncThunk(
+  "transactions/updateBalance",
+  async (value, thunkAPI) => {
+    try {
+      const data = await axios.patch("/user/balance", value);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const fetchUserBalance = createAsyncThunk(
+  "user/balance",
+  async ({ balance }, { getState, rejectWithValue }) => {
+    try {
+      const { data } = await axios.patch("/user/balance", {
+        newBalance: balance,
+      });
+      return data;
+    } catch ({ response }) {
+      const { status, data } = response;
+      const error = {
+        status,
+        message: data.message,
+      };
+      return rejectWithValue(error);
+    }
+  }
+);
 
 export const fetchExpenses = createAsyncThunk(
   "transactions/fetchExpenses",
@@ -38,7 +68,7 @@ export const addExpense = createAsyncThunk(
         category: info.category,
         amount: info.amount,
       });
-      thunkAPI.dispatch(getUserBalance());
+      thunkAPI.dispatch(fetchUserBalance());
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
@@ -56,7 +86,7 @@ export const addIncome = createAsyncThunk(
         category: info.category,
         amount: info.amount,
       });
-      thunkAPI.dispatch(getUserBalance());
+      thunkAPI.dispatch(fetchUserBalance());
       return response.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.message);
@@ -69,7 +99,7 @@ export const deleteTransaction = createAsyncThunk(
   async (transactionId, thunkAPI) => {
     try {
       const response = await axios.delete(`/transactions/${transactionId}`);
-      thunkAPI.dispatch(getUserBalance());
+      thunkAPI.dispatch(fetchUserBalance());
       thunkAPI.dispatch(fetchExpenses());
       thunkAPI.dispatch(fetchIncome());
       return response.data;
