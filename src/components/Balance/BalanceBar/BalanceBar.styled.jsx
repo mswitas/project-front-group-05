@@ -73,14 +73,16 @@ export const BalanceInput = styled.input`
   height: 44px;
   border: 2px solid #ffffff;
   outline: none;
-  ::placeholder {
-    font-family: Roboto;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 14.06px;
-    letter-spacing: 0.02em;
-    text-align: right;
-    color: #000000;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14.06px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #000000;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
   }
   @media (max-width: 767px) {
     width: 140px;
