@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const BalanceSection = styled.section`
   box-sizing: border-box;
@@ -33,8 +34,6 @@ export const ReportBox = styled.div`
   @media (min-width: 768px) {
     flex-direction: row;
   }
-  @media (min-width: 1280px) {
-  }
 `;
 export const ReportText = styled.p`
   font-family: Roboto;
@@ -61,17 +60,5 @@ export const SectionBar = styled.svg`
     padding: ;
     margin-bottom: 8px;
   }
-
-  @media (min-width: 768px) {
-  }
-  @media (min-width: 1280px) {
-  }
 `;
-// @media (max-width: 767px) {
-
-// }
-
-// @media (min-width: 768px) {
-// }
-// @media (min-width: 1280px) {
-// }
+export const Link = styled(NavLink)``;
