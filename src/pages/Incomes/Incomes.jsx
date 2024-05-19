@@ -1,30 +1,19 @@
 import React from "react";
 import Icon from "../../components/Icon/Icon";
-import css from "../MainPage/MainPage.module.css";
-import Balance from "../../................";
+import css from "../Expenses/ExpensesIncomes.module.css";
+import Balance from "../../components/Balance/MainBalance";
 import Navigation from "../../................";
 import ProductForm from "../../................";
-import TransactionsList from "../../................";
-import MobileForm from "../../................";
+import TransactionsList from "../../components/MainPage/TransactionsList/TransactionsList";
+import MobileForm from "../../components/MainPage/MobileForm/MobileForm";
 import Background from "../../................";
 import Summary from "../../................";
 
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchExpenses,
-  fetchIncome,
-} from "../../redux/...................";
-import { selectExpensesTransactions } from "../../redux/.................";
+import { useSelector } from "react-redux";
+import { selectIncomeTransactions } from "../../redux/transactions/selectors";
 
-export const Expenses = ({ isAddTransModalOpen, setIsAddTransModalOpen }) => {
-  const dispatch = useDispatch();
-  const transactionsList = useSelector(selectExpensesTransactions);
-
-  useEffect(() => {
-    dispatch(fetchExpenses());
-    dispatch(fetchIncome());
-  }, [dispatch]);
+export const Incomes = ({ isAddTransModalOpen, setIsAddTransModalOpen }) => {
+  const transactionsList = useSelector(selectIncomeTransactions);
 
   const handleShowModal = () => {
     setIsAddTransModalOpen(true);
@@ -45,18 +34,18 @@ export const Expenses = ({ isAddTransModalOpen, setIsAddTransModalOpen }) => {
         <span className={css.btnText}>ADD TRANSACTION</span>
       </button>
       <Balance />
-      <Navigation transactionType="expenses" />
+      <Navigation transactionType="income" />
 
       <div className={css.transactionsWindow}>
         <div className={css.formDesktop}>
           <ProductForm
-            transactionType="expenses"
+            transactionType="income"
             isAddTransModalOpen={isAddTransModalOpen}
           />
         </div>
         <div className={css.mobileForm}>
           <MobileForm
-            transactionType="expenses"
+            transactionType="income"
             isAddTransModalOpen={isAddTransModalOpen}
             setIsAddTransModalOpen={setIsAddTransModalOpen}
           />
@@ -64,18 +53,17 @@ export const Expenses = ({ isAddTransModalOpen, setIsAddTransModalOpen }) => {
         <div className={css.desktopView}>
           <TransactionsList
             transactionsList={transactionsList}
-            transactionType="expenses"
+            transactionType="income"
           />
           <div className={css.desktop}>
-            <Summary reportType="expenses" />
+            <Summary reportType="income" />
           </div>
         </div>
       </div>
       <div className={css.tablet}>
-        <Summary reportType="expenses" />
+        <Summary reportType="income" />
       </div>
     </div>
   );
 };
-
-export default Expenses;
+export default Incomes;
