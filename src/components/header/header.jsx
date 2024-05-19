@@ -3,8 +3,9 @@ import {
    LogoHeader,
    LogoWebFont,
    NavMenu,
-} from "../header/header.styled",
-import icons from "../../assets/icons.svg",
+} from "../header/header.styled";
+
+import icons from "../../assets/icons.svg";
 
 export const header =() {
    return (
