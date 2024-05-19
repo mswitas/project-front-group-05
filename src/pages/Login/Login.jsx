@@ -66,7 +66,7 @@ export const Login = () => {
             <Form style={styles.form} onChange={handleChange}>
               <p style={styles.formP}>You can log in with your Google Account:</p>
               <div style={styles.googleBtnWrapper}>
-                <a style={styles.googleBtn} href="https://kapusta-backend.goit.global/auth/google">
+                <a style={styles.googleBtn} href="https://demokraci-kapusta.onrender.com/">
                   <GoogleIcon style={styles.googleBtnSvg} />
                   Google
                 </a>
