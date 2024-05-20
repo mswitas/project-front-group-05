@@ -7,19 +7,23 @@ export const BalanceSection = styled.section`
   display: flex;
   align-items: center;
   height: 128px;
+
   @media screen and (max-width: 767px) {
     flex-direction: column-reverse;
     align-items: center;
     gap: 32px;
     margin-top: 14px;
+    padding-inline: 20px;
   }
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     flex-direction: row;
+    padding-inline: 32px;
   }
   @media screen and (min-width: 1280px) {
     justify-content: flex-end;
-    gap: 30vw;
+    gap: 298px;
+    padding-inline: 91px;
   }
 `;
 
