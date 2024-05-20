@@ -3,7 +3,7 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import TextField from "@mui/material/TextField";
 import css from "./CurrentDate.module.css";
 
-const Today = ({ selectedDate, onDateChange }) => {
+const CurrentDate = ({ selectedDate, onDateChange }) => {
   return (
     <div className={css.wrapper}>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -20,4 +20,4 @@ const Today = ({ selectedDate, onDateChange }) => {
   );
 };
 
-export default Today;
+export default CurrentDate;
