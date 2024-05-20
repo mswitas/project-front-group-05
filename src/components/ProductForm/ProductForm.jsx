@@ -20,7 +20,7 @@ import {
 import { useEffect } from "react";
 
 
-import { selectBalance } from "../../redux/auth/selectors";
+import { selectBalance } from "../../redux/transactions/selectors";
 
 const ProductForm = ({
   transactionType,
