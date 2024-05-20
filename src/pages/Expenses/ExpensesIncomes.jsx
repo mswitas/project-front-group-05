@@ -1,13 +1,13 @@
 import React from "react";
 import Icon from "../../components/Icon/Icon";
 import css from "../Expenses/ExpensesIncomes.module.css";
-import Balance from "../../components/Balance/MainBalance";
-import Navigation from "../../................";
-import ProductForm from "../../................";
-import TransactionsList from "../../components/MainPage/TransactionsList/TransactionsList";
-import MobileForm from "../../components/MainPage/MobileForm/MobileForm";
-import Background from "../../................";
-import Summary from "../../................";
+import Balance from "../../components/Balance/MainBalance/Balance";
+import Navigation from "../../components/Navigation/Navigation";
+import ProductForm from "../../components/ProductForm/ProductForm";
+import TransactionsList from "../../components/TransactionsList/TransactionsList";
+import MobileForm from "../../components/MobileForm/MobileForm";
+import Background from "../../components/Background/Backdround";
+import Summary from "../../components/Summary/Summary";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
