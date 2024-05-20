@@ -22,7 +22,7 @@ export const BalanceSection = styled.section`
   }
   @media screen and (min-width: 1280px) {
     justify-content: flex-end;
-    gap: 30vw;
+    gap: 298px;
     padding-inline: 91px;
   }
 `;
@@ -66,4 +66,3 @@ export const SectionBar = styled.svg`
   }
 `;
 export const Link = styled(NavLink)``;
-
