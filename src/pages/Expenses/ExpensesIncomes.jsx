@@ -6,7 +6,6 @@ import Navigation from "../../components/Navigation/Navigation";
 import ProductForm from "../../components/ProductForm/ProductForm";
 import TransactionsList from "../../components/TransactionsList/TransactionsList";
 import MobileForm from "../../components/MobileForm/MobileForm";
-import Background from "../../components/Background/Backdround";
 import Summary from "../../components/Summary/Summary";
 
 import { useEffect } from "react";
@@ -35,7 +34,6 @@ export const ExpensesIncomes = ({ isAddTransModalOpen, setIsAddTransModalOpen })
 
   return (
     <div className={css.container}>
-      <Background />
       <button
         type="button"
         className={css.btnWrapper}

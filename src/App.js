@@ -11,7 +11,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import SharedLayout from "./pages/SharedLayout/SharedLayout";
 const Reports = lazy(() => import("./pages/Reports/Reports"));
-const Expences = lazy(() => import("./pages/Expences/Expences"));
+const Expences = lazy(() => import("./pages/Expenses/ExpensesIncomes"));
 const Income = lazy(() => import("./pages/Income/Income"));
 const Login = lazy(() => import("./pages/Login/Login"));
 const Register = lazy(() => import("./pages/Register/Register"));
