@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 
-import { Value, Table, Header, ListItem, Month } from "./summary-styled";
+import { Value, Table, Header, ListItem, Month } from "./Summary-styled";
 
 import {
   selectIsLoading,

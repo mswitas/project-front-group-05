@@ -1,5 +1,5 @@
 import ProductForm from "../ProductForm/ProductForm";
-import Icon from "../../Icon/Icon";
+import Icon from "../Icon/Icon";
 import css from "./MobileForm.module.css";
 import Background from "../../Background/Background";
 

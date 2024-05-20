@@ -5,19 +5,22 @@ import {
   addIncome,
   fetchExpensesCategories,
   fetchIncomeCategories,
-} from "../../../redux/transactions/operations";
+
+} from "../../redux/transactions/operations";
 
 import { nanoid } from "nanoid";
 
 import css from "./ProductForm.module.css";
-import Icon from "../../Icon/Icon";
+import Icon from "../Icon/Icon";
 import CurrentDate from "../../CurrentDate/CurrentDate";
 import {
   selectExpensesCategories,
   selectIncomeCategories,
-} from "../../../redux/transactions/selectors";
+} from "../../redux/transactions/selectors";
 import { useEffect } from "react";
-import { selectBalance } from "../../../redux/auth/selectors";
+
+
+import { selectBalance } from "../../redux/auth/selectors";
 
 const ProductForm = ({
   transactionType,

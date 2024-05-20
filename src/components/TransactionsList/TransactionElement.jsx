@@ -2,9 +2,9 @@ import css from "./TransactionsList.module.css";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTransaction } from "../../../redux/transactions/operations";
-import Icon from "../../Icon/Icon";
-import { selectIsOpen } from "../../../redux/modal/selectors";
-import { toggleIsOpen } from "../../../redux/modal/modalSlice";
+import Icon from "../Icon/Icon";
+import { selectIsOpen } from "../../redux/modal/selectors";
+import { toggleIsOpen } from "../../redux/modal/modalSlice";
 import { SureModal } from "../../Modals/SureModal/SureModal";
 
 export const TransactionElement = ({

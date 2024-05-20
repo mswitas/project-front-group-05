@@ -17,3 +17,9 @@ export const selectIncomeCategories = (state) =>
 export const selectTransactions = (state) => state.transactions.transactions;
 
 export const selectBalance = (state) => state.transactions.newBalance;
+
+export const selectIncomeSummary = (store) =>
+  store.transactions.incomes.monthsStats;
+
+export const selectExpensesSummary = (store) =>
+  store.transactions.expences.monthsStats;

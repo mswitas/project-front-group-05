@@ -1,6 +1,6 @@
 import css from "./TransactionsMobile.module.css";
 import { useDispatch } from "react-redux";
-import Icon from "../../../Icon/Icon";
+import Icon from "../../Icon/Icon";
 import { deleteTransaction } from "../../../redux/transactions/operations";
 
 export const TransactionsMobile = ({ transactionsList, transactionType }) => {
