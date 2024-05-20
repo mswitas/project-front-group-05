@@ -10,21 +10,28 @@ export const BalanceSection = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    padding-inline: 20px;
+    padding-top: 16px;
+    padding-bottom: 32px;
   }
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     flex-direction: row;
     margin: 0px;
+    padding-inline: 32px;
+    padding-top: 40px;
+    padding-bottom: 32px;
   }
   @media screen and (min-width: 1280px) {
     justify-content: space-between;
+    padding-inline: 91px;
   }
 `;
 export const MainPageLink = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
   @media screen and (max-width: 767px) {
-    width: 100vw;
+    width: 100%;
     text-align: left;
   }
   @media screen and (min-width: 768px) {
@@ -35,6 +42,7 @@ export const MainPageLink = styled(NavLink)`
   }
 `;
 export const MainPageText = styled.p`
+  display: block;
   font-family: Roboto;
   font-size: 12px;
   font-weight: 400;
@@ -61,7 +69,10 @@ export const MobileWrapper = styled.div`
   gap: 16px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    gap: 25vw;
+    gap: 102px;
     background: #f2f5fc;
+  }
+  @media screen and (min-width: 1280px) {
+    gap: 214px;
   }
 `;

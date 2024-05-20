@@ -18,7 +18,7 @@ export const BalanceSection = styled.section`
   }
   @media screen and (min-width: 1280px) {
     justify-content: flex-end;
-    gap: 30vw;
+    gap: 298px;
   }
 `;
 export const BalanceForm = styled.form`
