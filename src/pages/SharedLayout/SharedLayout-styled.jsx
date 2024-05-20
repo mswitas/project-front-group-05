@@ -1,27 +1,28 @@
 import styled from "styled-components";
 
 export const SharedLayoutContainer = styled.div`
-  width: 320px;
-  margin: 0px auto;
 
-  @media screen and (min-width: 768px) {
-    width: 768px;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    background-color: rgba(255, 255, 255, 1);
+  @media (min-width: 480px) {
+    body {
+      min-width: 480px;
+      max-width: 767px;
+    }
   }
-
-  @media screen and (min-width: 1280px) {
-    width: 1280px;
+  @media (min-width: 768px) {
+   
+      font-size: 16px;
+      line-height: 24px;
+      min-width: 768px;
+      max-width: 1279px;
   }
-`;
-export const OutletContainer = styled.div`
-  box-sizing: -box;
-  padding-inline: 20px;
-  background: inherit;
-
-  @media screen and (min-width: 768px) {
-    padding-inline: 32px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    padding-inline: 91px;
+  @media (min-width: 1280px) {
+      font-size: 16px;
+      line-height: 27px;
+      min-width: 1280px;
+      max-width: 100%;}
   }
 `;
