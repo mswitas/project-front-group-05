@@ -2,8 +2,7 @@
   "name": "project-front-group-05",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
-  "homepage": "https://mswitas.github.io/project-front-group-05",
+  "homepage": "https://luminous-cucurucho-a1e967.netlify.app/",
   "dependencies": {
     "@mui/material": "^5.15.18",
     "@mui/x-date-pickers": "^7.5.0",
