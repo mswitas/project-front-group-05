@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const StyledAuthNav = styled.nav`
+export const AuthNav = styled.nav`
   display: flex;
   align-items: center;
   gap: 16px;
 `;
 
-export const StyledLoginLabel = styled.div`
+export const LoginLabel = styled.div`
   padding: 9px 12px;
   font-size: 12px;
   line-height: 1.17;
@@ -16,7 +16,7 @@ export const StyledLoginLabel = styled.div`
   border-radius: 50%;
 `;
 
-export const StyledLoginName = styled.p`
+export const LoginName = styled.p`
   display: none;
   margin: 0;
   padding: 0;
@@ -29,14 +29,14 @@ export const StyledLoginName = styled.p`
   }
 `;
 
-export const StyledLogoutImg = styled.img`
+export const LogoutImg = styled.button`
   cursor: pointer;
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-export const StyledVerticalLine = styled.span`
+export const VerticalLine = styled.span`
   display: none;
 
   @media screen and (min-width: 768px) {
@@ -47,7 +47,7 @@ export const StyledVerticalLine = styled.span`
   }
 `;
 
-export const StyledExitButton = styled.button`
+export const ExitButton = styled.button`
   display: none;
 
   @media screen and (min-width: 768px) {
@@ -60,4 +60,8 @@ export const StyledExitButton = styled.button`
     line-height: 1.17;
     color: #52555f;
   }
+`;
+export const PageIcon = styled.svg`
+  width: 20px;
+  height: 20px;
 `;

@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { updateBalance } from "../../../redux/transactions/operations";
 
 import {
   BalanceForm,
@@ -9,12 +10,13 @@ import {
   BalanceButton,
 } from "./BalanceBarReport.styled";
 
-import { selectBalance } from "../../../redux/transactions/selectors";
-import { updateBalance } from "../../../redux/transactions/operations";
+import EntryModal from "../../Modals/EntryModal/EntryModal";
+import BalanceModal from "../../Modals/BalanceModal/BalanceModal";
 
 const BalanceBarReport = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   const form = useRef();
-  const stateBalance = useSelector(selectBalance);
+  const stateBalance = useSelector((state) => state.transactions.newBalance);
   const dispatch = useDispatch();
   let balance;
 
@@ -24,24 +26,47 @@ const BalanceBarReport = () => {
   };
   const onClick = () => {
     dispatch(updateBalance({ newBalance: balance }));
+    form.current.reset();
+  };
+
+  //Modal window
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+  const handleModalClose = () => {
+    setModalOpen(false);
   };
   return (
-    <BalanceForm onSubmit={handleSubmit} autoComplete="off" ref={form}>
-      <BalanceText id="bilans">Balance:</BalanceText>
-      <BalanceBox>
-        <BalanceInput
-          id="balance"
-          name="balance"
-          type="number"
-          pattern="[0-9, .UAH]*"
-          placeholder={`${stateBalance}.00 UAH`}
-          required
-        />
-        <BalanceButton type="submit" onClick={onClick}>
-          CONFIRM
-        </BalanceButton>
-      </BalanceBox>
-    </BalanceForm>
+    <>
+      <BalanceForm onSubmit={handleSubmit} ref={form}>
+        <BalanceText id="bilans">Balance:</BalanceText>
+        <BalanceBox>
+          <BalanceInput
+            id="balance"
+            name="balance"
+            type="number"
+            pattern="[0-9, .UAH]*"
+            placeholder={`${stateBalance}.00 UAH`}
+            required
+          />
+          <BalanceButton type="submit" onClick={handleModalOpen}>
+            CONFIRM
+          </BalanceButton>
+        </BalanceBox>
+        {!stateBalance && <EntryModal />}
+      </BalanceForm>
+      {modalOpen && (
+        <BalanceModal
+          changeBalance="true"
+          closeModal={handleModalClose}
+          dispatch={onClick}
+          text="SURE"
+          balance={balance}
+        >
+          Are you sure?
+        </BalanceModal>
+      )}
+    </>
   );
 };
 export default BalanceBarReport;

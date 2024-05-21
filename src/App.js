@@ -11,10 +11,10 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import SharedLayout from "./pages/SharedLayout/SharedLayout";
 const Reports = lazy(() => import("./pages/Reports/Reports"));
-const Expences = lazy(() => import("./pages/Expenses/ExpensesIncomes"));
-const Income = lazy(() => import("./pages/Income/Income"));
+const Expences = lazy(() => import("./pages/Expenses/Expenses"));
+const Income = lazy(() => import("./pages/Incomes/Incomes"));
 const Login = lazy(() => import("./pages/Login/Login"));
-const Register = lazy(() => import("./pages/Register/Register"));
+const RegisterPage = lazy(() => import("./pages/Register/Register"));
 
 const App = () => {
   return (
@@ -25,7 +25,7 @@ const App = () => {
         <Route path="/income" element={<Income />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>

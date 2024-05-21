@@ -17,7 +17,6 @@ const BalanceReports = () => {
         <MainPageIcon>
           <use href={`${icons}#back-arrow`}></use>
         </MainPageIcon>
-
         <MainPageText>Main page</MainPageText>
       </MainPageLink>
       <MobileWrapper>

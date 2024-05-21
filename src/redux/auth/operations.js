@@ -1,87 +1,55 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { Report } from "notiflix/build/notiflix-report-aio";
 
-axios.defaults.baseURL = "https://demokraci-kapusta.onrender.com/";
+import {
+  loginAPI,
+  logoutAPI,
+  setAuthHeader,
+  clearAuthHeader,
+  fullUserInfoAPI,
+} from "./api";
 
-const setAuthHeader = (accessToken) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
-};
-
-const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = "";
-};
-
-export const fetchUser = createAsyncThunk(
-  "auth/info",
-  async (_, { getState, rejectWithValue }) => {
-    try {
-      const state = getState();
-      const accessToken = state.auth.token;
-      setAuthHeader(accessToken);
-      const response = await axios.get("/user");
-      return response;
-    } catch (error) {
-      return rejectWithValue(error);
-    }
-  }
-);
-
-export const register = createAsyncThunk(
-  "auth/register",
-  async (credentials, thunkAPI) => {
-    try {
-      const response = await axios.post("/auth/register", credentials);
-      if (response) {
-        try {
-          const results = await axios.post("/auth/login", credentials);
-          setAuthHeader(results.data.accessToken);
-          return results.data;
-        } catch (error) {
-          return thunkAPI.rejectWithValue(error);
-        }
-      }
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error);
-    }
-  }
-);
-
-export const login = createAsyncThunk(
+// Login Thunk
+export const logIn = createAsyncThunk(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
-      const response = await axios.post("/auth/login", credentials);
-      setAuthHeader(response.data.accessToken);
-      return response.data;
+      const data = await loginAPI(credentials);
+      setAuthHeader(data.accessToken);
+
+      return data;
     } catch (error) {
+      if (error.response.status === 403) {
+        Report.failure("Email or Password is wrong.");
+      }
+
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
-
-export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
+// Logout Thunk
+export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
-    await axios.post("/auth/logout");
+    await logoutAPI();
     clearAuthHeader();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    thunkAPI.rejectWithValue(error.message);
   }
 });
-
+// Refresh user Thunk
 export const refreshUser = createAsyncThunk(
-  "auth/refresh",
+  "auth/refreshUser",
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
-    const persistedToken = state.auth.newAccessToken;
+    const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue("Unable to fetch user");
+    setAuthHeader(persistedToken);
+    if (!persistedToken) {
+      return thunkAPI.rejectWithValue("немає токену");
     }
-
     try {
-      setAuthHeader(persistedToken);
-      const response = await axios.get("/user");
-      return response.data;
+      const data = await fullUserInfoAPI();
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

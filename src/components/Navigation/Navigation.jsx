@@ -7,23 +7,26 @@ const Navigation = ({ transactionType }) => {
     <nav className={css.wrapper}>
       {transactionType === "expenses" && (
         <>
-          <a onClick={() => navigate("/main")} className={css.active}>
+          <Link onClick={() => navigate("/")} className={css.active}>
             EXPENSES
-          </a>
-          <a onClick={() => navigate("/main/incomes")} className={css.item}>
+          </Link>
+          <Link onClick={() => navigate("/expenses")} className={css.item}>
             INCOME
-          </a>
+          </Link>
         </>
       )}
 
       {transactionType === "income" && (
         <>
-          <a onClick={() => navigate("/main")} className={css.item}>
+          <Link onClick={() => navigate("/")} className={css.item}>
             EXPENSES
-          </a>
-          <a onClick={() => navigate("/main/incomes")} className={css.active}>
+          </Link>
+          <Link
+            onClick={() => navigate("/income")}
+            className={css.active}
+          >
             INCOME
-          </a>
+          </Link>
         </>
       )}
     </nav>

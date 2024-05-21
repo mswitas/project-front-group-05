@@ -1,28 +1,29 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/auth/operations";
-import logoutImg from "../../images/logout.svg";
-import { getLogStatus, selectUser } from "../../redux/auth/selectors";
+import { logOut } from "../../redux/auth/operations";
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 import {
-  StyledAuthNav,
-  StyledLoginLabel,
-  StyledLoginName,
-  StyledLogoutImg,
-  StyledVerticalLine,
-  StyledExitButton,
-} from "./AuthNav.styled";
-import { HeaderModalWindow } from "../HeaderModalWindow/HeaderModalWindow";
+  AuthNav,
+  LoginLabel,
+  LoginName,
+  LogoutImg,
+  VerticalLine,
+  ExitButton,
+  PageIcon,
+} from "./AuthorizatedNav.styled";
+import { HeaderModalWindow } from "../Modals/HeaderModalWindow/HeaderModalWindow";
+import icons from "../../assets/icons.svg";
 
 // Authorization bar
 const AuthorizatedNav = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const isLoggedIn = useSelector(getLogStatus);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const userEmail = useSelector(selectUser);
   const dispatch = useDispatch();
 
   // Logout
   const handleClick = () => {
-    dispatch(logout());
+    dispatch(logOut());
   };
   // Open modal window
   const handleModalOpen = () => {
@@ -36,22 +37,22 @@ const AuthorizatedNav = () => {
   return (
     isLoggedIn && (
       <>
-        <StyledAuthNav>
+        <AuthNav>
           {/* Round label with first letter of users email */}
-          <StyledLoginLabel>{userEmail[0].toUpperCase()}</StyledLoginLabel>
+          <LoginLabel>{userEmail[0].toUpperCase()}</LoginLabel>
           {/* Users email */}
-          <StyledLoginName>{userEmail}</StyledLoginName>
+          <LoginName>{userEmail}</LoginName>
           {/* Logout image. For mobile version only */}
-          <StyledLogoutImg
-            src={logoutImg}
-            alt="logout"
-            onClick={handleModalOpen}
-          />
-          <StyledVerticalLine></StyledVerticalLine>
-          <StyledExitButton type="button" onClick={handleModalOpen}>
+          <LogoutImg>
+            <PageIcon>
+              <use href={`${icons}#logout`}></use>
+            </PageIcon>
+          </LogoutImg>
+          <VerticalLine></VerticalLine>
+          <ExitButton type="button" onClick={handleModalOpen}>
             Exit
-          </StyledExitButton>
-        </StyledAuthNav>
+          </ExitButton>
+        </AuthNav>
         {modalOpen && (
           <HeaderModalWindow
             closeModal={handleModalClose}

@@ -1,69 +1,63 @@
-import React from "react";
-import Icon from "../../components/Icon/Icon";
-import css from "../Expenses/ExpensesIncomes.module.css";
-import Balance from "../../components/Balance/MainBalance/Balance";
-import Navigation from "../../components/Navigation/Navigation";
-import ProductForm from "../../components/ProductForm/ProductForm";
-import TransactionsList from "../../components/TransactionsList/TransactionsList";
-import MobileForm from "../../components/MobileForm/MobileForm";
-import Background from "../../components/Background/Backdround";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { TransactionList } from "../../components/TransactionsList/TransactionList";
+import {
+  selectIncomeTransactions,
+  selectBalance,
+} from "../../redux/transactions/selectors";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { getIncome } from "../../redux/transactions/operations";
+
+import { BackButton } from "../../components/ModalButtons/BackButton";
+import {
+  StyledBg,
+  StyledFrame,
+  StyledTableAndSummaryDiv,
+} from "../Expenses/Expenses.styled";
+// import Form from "../../components/Form/Form";
 import Summary from "../../components/Summary/Summary";
 
-import { useSelector } from "react-redux";
-import { selectIncomeTransactions } from "../../redux/transactions/selectors";
+// Incomes page
+export default function Incomes() {
+  // Dispatch
+  const dispatch = useDispatch();
+  //Media
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width: 1279px)",
+  });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
 
-export const Incomes = ({ isAddTransModalOpen, setIsAddTransModalOpen }) => {
-  const transactionsList = useSelector(selectIncomeTransactions);
-
-  const handleShowModal = () => {
-    setIsAddTransModalOpen(true);
-    const dialog = document.getElementById("mobileModal");
-    dialog.showModal();
-    document.body.style.position = "fixed";
-  };
+  // Selectors
+  const allIncomes = useSelector(selectIncomeTransactions);
+  const user = useSelector(selectIsLoggedIn);
+  const balance = useSelector(selectBalance);
+  const color = "green";
+  // Get incomes data
+  useEffect(() => {
+    if (user) dispatch(getIncome());
+  }, [dispatch, user, balance]);
 
   return (
-    <div className={css.container}>
-      <Background />
-      <button
-        type="button"
-        className={css.btnWrapper}
-        onClick={handleShowModal}
-      >
-        <Icon className={css.btnIcon} iconName="arrow_left" />
-        <span className={css.btnText}>ADD TRANSACTION</span>
-      </button>
-      <Balance />
-      <Navigation transactionType="income" />
-
-      <div className={css.transactionsWindow}>
-        <div className={css.formDesktop}>
-          <ProductForm
-            transactionType="income"
-            isAddTransModalOpen={isAddTransModalOpen}
-          />
-        </div>
-        <div className={css.mobileForm}>
-          <MobileForm
-            transactionType="income"
-            isAddTransModalOpen={isAddTransModalOpen}
-            setIsAddTransModalOpen={setIsAddTransModalOpen}
-          />
-        </div>
-        <div className={css.desktopView}>
-          <TransactionsList
-            transactionsList={transactionsList}
-            transactionType="income"
-          />
-          <div className={css.desktop}>
-            <Summary reportType="income" />
-          </div>
-        </div>
-      </div>
-      <div className={css.tablet}>
-        <Summary reportType="income" />
-      </div>
-    </div>
+    <>
+      {isMobile && (
+        <>
+          <StyledBg />
+          <BackButton />
+        </>
+      )}
+      <StyledFrame>
+        {/* <Form /> */}
+        <StyledTableAndSummaryDiv>
+          <TransactionList>
+            {allIncomes}
+            {color}
+          </TransactionList>
+          {isDesktop && <Summary />}
+        </StyledTableAndSummaryDiv>
+      </StyledFrame>
+      {isTablet && <Summary />}
+    </>
   );
-};
-export default Incomes;
+}
