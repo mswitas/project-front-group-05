@@ -23,6 +23,7 @@ export const OrangeButton = ({
     <StyledOrangeButton onClick={handleClick}>{children}</StyledOrangeButton>
   );
 };
+export default OrangeButton;
 
 OrangeButton.propTypes = {
   children: PropTypes.string.isRequired,
