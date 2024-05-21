@@ -1,7 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { authReducer } from "./auth/slice";
+import { transactionsReducer } from "./transactions/slice";
+import { reportsReducer } from "./reports/slice";
+import { reportsQueryReducer } from "./reportsQuery/reportsQuery.slice";
+import modalReducer from "./modal/modalSlice";
+
 import {
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,29 +15,39 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import persistReducer from "redux-persist/es/persistReducer";
 
-import { authReducer } from "./auth/slice";
-import { transactionsReducer } from "./transactions/slice";
-const persistConfig = {
-  key: "root",
+const authPersistConfig = {
+  key: "auth",
   storage,
-  whitelist: ["token", "user", "refreshToken", "sid", "isLoggedIn"],
+  whitelist: ["token"],
 };
-
-const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    auth: persistedReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
     transactions: transactionsReducer,
+    reports: reportsReducer,
+    reportsQuery: reportsQueryReducer,
+    modal: modalReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        ignoredActions: [
+          FLUSH,
+          REHYDRATE,
+          PAUSE,
+          PERSIST,
+          PURGE,
+          REGISTER,
+          "your/action/type",
+        ],
+        ignoredActionPaths: ["meta.arg", "payload.timestamp"],
+        // Ignore these paths in the state
+        ignoredPaths: ["items.dates"],
       },
     }),
-  devTools: process.env.NODE_ENV === "development",
 });
 
 export const persistor = persistStore(store);

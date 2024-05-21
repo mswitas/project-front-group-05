@@ -17,17 +17,6 @@ export const PaginatorTitile = styled.p`
   padding-bottom: 5px;
 `;
 
-export const PaginatorWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-export const PaginatorArrow = styled.svg`
-  width: 8px;
-  height: 12px;
-  display: flex;
-`;
-
 export const MonthsDisplayer = styled.p`
   font-family: Roboto;
   font-size: 14px;
@@ -37,11 +26,4 @@ export const MonthsDisplayer = styled.p`
   text-align: center;
   color: #000000;
   margin: 2px;
-`;
-
-export const PaginatorButton = styled.button`
-  border: 0px;
-  padding: 0px;
-  outline: none;
-  background: inherit;
 `;

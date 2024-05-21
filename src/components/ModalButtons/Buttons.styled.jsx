@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledOrangeButton = styled.button`
   padding: 12px 0px;
@@ -27,4 +28,11 @@ export const StyledWhiteButton = styled.button`
   text-align: center;
   letter-spacing: 0.02em;
   line-height: 1.17;
+`;
+export const ButtonBack = styled(Link)`
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: 14px 0px 14px 16px;
 `;

@@ -1,114 +1,164 @@
-import React from 'react';
+import styled from "styled-components";
+import { HandySvg } from "handy-svg";
 
-export const styles = {
-  a: {
-    textDecoration: 'none',
-  },
-  formWrapper: {
-    position: 'relative',
-    right: 0,
-    top: '5%',
-    zIndex: 100,
-    width: '426px',
-    background: '#ffffff',
-    boxShadow: '0px 10px 60px rgba(170, 178, 197, 0.2)',
-    borderRadius: '30px',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '56px 83px',
-  },
-  buttons: {
-    marginTop: '40px',
-    display: 'flex',
-    gap: '15px',
-  },
-  btn: {
-    letterSpacing: '0.02em',
-    textTransform: 'uppercase',
-    color: '#52555f',
-    padding: '12px 15px',
-    width: '122px',
-    fontSize: '12px',
-    fontWeight: 700,
-    lineHeight: 1.17,
-    border: 'none',
-    cursor: 'pointer',
-    borderRadius: '16px',
-    filter: 'drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15))',
-    backgroundColor: '#f5f6fb',
-  },
-  btnHoverFocus: {
-    color: '#ffffff',
-    background: '#ff751d',
-    filter: 'drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35))',
-  },
-  formP: {
-    fontWeight: 400,
-    fontSize: '12px',
-    lineHeight: 1.17,
-    letterSpacing: '0.04em',
-    marginBottom: '20px',
-    color: '#52555f',
-  },
-  googleBtn: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginBottom: '32px',
-    display: 'flex',
-    alignItems: 'flex-end',
-    letterSpacing: '0.02em',
-    color: '#000000',
-    backgroundColor: '#f5f6fb',
-    padding: '12px 15px',
-    width: '122px',
-    fontFamily: 'Roboto, sans-serif',
-    fontWeight: 600,
-    fontSize: '14px',
-    lineHeight: 1.17,
-    border: 'none',
-    cursor: 'pointer',
-    borderRadius: '16px',
-    filter: 'drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2))',
-  },
-  googleBtnSvg: {
-    marginRight: '10px',
-  },
-  formWrapperMobile: {
-    width: '280px',
-    padding: '40px 20px',
-  },
-  formPFirstChild: {
-    width: '222px',
-    textAlign: 'center',
-    marginBottom: '16px',
-  },
-};
+export const StyledLoginPage = styled.div``;
 
-export const MediaQueries = () => (
-  <style>
-    {`
-      @media (max-width: 767px) {
-        .formWrapper {
-          width: 280px;
-          padding: 40px 20px;
-        }
-        .form p:nth-child(1) {
-          width: 222px;
-          text-align: center;
-          margin-bottom: 16px;
-        }
-      }
-      @media (min-width: 768px) {
-        .formWrapper {
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .form p:nth-child(1) {
-          text-align: center;
-        }
-      }
-    `}
-  </style>
-);
+export const Background = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: 342px;
+  background-image: ${(props) => `url(${props.imgMobUrl})`};
+  background-repeat: no-repeat;
+  padding-top: 86px;
+
+  @media screen and (min-width: 768px) {
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 768px;
+    height: 582px;
+    background-image: ${(props) => `url(${props.imgTabUrl})`};
+    background-repeat: no-repeat;
+  }
+
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    justify-content: center;
+    width: 1280px;
+    height: 582px;
+    background-image: ${(props) => `url(${props.imgDeskUrl})`};
+    background-repeat: no-repeat;
+  }
+`;
+
+export const KapustaMobTop = styled.img`
+  position: absolute;
+  top: 110px;
+  right: 0px;
+`;
+
+export const KapustaMobBottom = styled(HandySvg)`
+  position: absolute;
+  top: 690px;
+  left: 35px;
+`;
+
+export const KapustaTabBotLeft = styled(HandySvg)`
+  position: absolute;
+  top: 800px;
+  left: 103px;
+  z-index: -1;
+
+  @media screen and (min-width: 1280px) {
+    top: 700px;
+    left: 230px;
+  }
+`;
+
+export const KapustaTabBotRight = styled(HandySvg)`
+  position: absolute;
+  top: 765px;
+  left: 197px;
+  z-index: -1;
+  transform: rotate(-90deg);
+
+  @media screen and (min-width: 1280px) {
+    top: 680px;
+    left: 324px;
+  }
+`;
+
+export const ShadowTabBotLeft = styled(HandySvg)`
+  position: absolute;
+  top: 880px;
+  left: 108px;
+
+  @media screen and (min-width: 1280px) {
+    top: 770px;
+    left: 230px;
+  }
+`;
+
+export const ShadowTabBotRight = styled(HandySvg)`
+  position: absolute;
+  top: 860px;
+  left: 219px;
+
+  @media screen and (min-width: 1280px) {
+    top: 750px;
+    left: 340px;
+  }
+`;
+
+export const Image = styled.img`
+  width: 183px;
+  height: 47px;
+  margin-bottom: 5px;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    width: 307px;
+    height: 78px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 377px;
+    height: 120px;
+  }
+`;
+
+export const Text = styled.p`
+  width: 141px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.15;
+  letter-spacing: 0.15em;
+  z-index: 2;
+
+  color: #52555f;
+
+  @media screen and (min-width: 768px) {
+    width: 162px;
+    margin-bottom: 80px;
+    font-size: 16px;
+    line-height: 1.18;
+    letter-spacing: 0.18em;
+  }
+
+  @media screen and (min-width: 1280px) {
+  }
+`;
+
+export const TextWrap = styled.div`
+  z-index: 2;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -110px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-left: 0;
+    margin-right: 157px;
+  }
+`;
+
+export const GroupTablet = styled.img`
+  position: absolute;
+  top: 28px;
+  left: 0;
+`;
+
+export const GroupDesktop = styled.img`
+  position: absolute;
+  top: 28px;
+  left: 10px;
+`;

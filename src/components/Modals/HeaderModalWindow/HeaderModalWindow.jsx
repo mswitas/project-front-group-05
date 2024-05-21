@@ -6,17 +6,19 @@ import {
   ContentWrapper,
   Text,
   ButtonsWrapper,
-  CloseButton,OrangeButton,WhiteButton,
+  CloseButton,
   Backdrop,
-} from "./LightModalWindow.styled";
-import { OrangeButton } from '../ModalButtons/OrangeButton'
-import { WhiteButton } from "../ModalButtons/WhiteButton";
+} from "./HeaderModalWindow.styled";
+import { OrangeButton } from "../../ModalButtons/OrangeButton";
+import { WhiteButton } from "../../ModalButtons/WhiteButton";
+import icons from "../../../assets/icons.svg";
+
 // Query selectors
 const modalRoot = document.getElementById("modal-root");
 const body = document.querySelector("body");
 
 // Modal window
-export const LightModalWindow = ({
+export const HeaderModalWindow = ({
   children,
   closeModal,
   dispatch,
@@ -75,7 +77,7 @@ export const LightModalWindow = ({
   );
 };
 
-LightModalWindow.propTypes = {
+HeaderModalWindow.propTypes = {
   children: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
