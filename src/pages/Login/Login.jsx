@@ -9,6 +9,7 @@ import { ReactComponent as GoogleIcon } from '../../assets/icons.svg';
 
 import { styles, MediaQueries } from './Login-styled';
 import { TextField } from '../../components/SignIn/TextField';
+import KapustaBg from '../../components/Backgrounds/KapustaBg';
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ export const Login = () => {
 
   return (
     <>
+    <KapustaBg/>
       <Formik
         initialValues={{
           email: '',
