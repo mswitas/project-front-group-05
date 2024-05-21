@@ -1,9 +1,10 @@
+import Background from "../../components/Backgrounds/Container";
 import Balance from "../../components/Balance/MainBalance/Balance";
 
 const Expences = () => {
   return (
     <div>
-      <Balance />
+      <Balance /> <Background />
     </div>
   );
 };
