@@ -95,3 +95,53 @@ export const ImageKapustaBottomTablet = styled.img`
     }
   }
 `;
+export const NameImage = styled.img`
+  width: 183px;
+  height: 47px;
+  margin-bottom: 5px;
+  position: absolute;
+  left: 20px;
+  top: 86px;
+  z-index: 2;
+  @media screen and (min-width: 768px) {
+    width: 307px;
+    height: 78px;
+    left: 171px;
+    top: 80px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 377px;
+    height: 120px;
+    top: 308px;
+    left: 229px;
+  }
+`;
+export const TextSmartFinance = styled.p`
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1.15;
+  letter-spacing: 0.15em;
+  color: #52555f;
+  position: absolute;
+  left: 11px;
+  top: 137px;
+  z-index: 2;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.18;
+    letter-spacing: 0.18em;
+    left: 224px;
+    top: 161px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.18;
+    letter-spacing: 0.18em;
+    left: 301px;
+    top: 428px;
+  }
+`;
