@@ -1,25 +1,19 @@
-import {
-   headerborder,
-   logoheader,
-   logokapustafont,
-   navmenu,
-} from "../header/header.styled";
-
+import { Link } from "react-router-dom";
+import { HeaderWrapper, HeaderIcon } from "./Header-styled";
 import icons from "../../assets/icons.svg";
+// import AuthorizatedNav from "../AuthorizatedNav/AuthorizatedNav";
 
-export const render = (
-   <header className="header-border">
-      <div class="container">
-         <nav class="nav-header">
-            <a href="./" rel="noreferrer noopener" class="logo"
-            ><span class="logo-kapusta-font">Kapusta</span>
-            </a>
-            <svg class="logo-header" width="90" height="31">
-            <use href="../../assets/icons.svg"></use>
-          </svg>
-         </nav>         
-      </div>
+const Header = () => {
+  return (
+    <HeaderWrapper>
+      <Link to="/">
+        <HeaderIcon>
+          <use href={`${icons}#logo-header`}></use>
+        </HeaderIcon>
+      </Link>
+      {/* <AuthorizatedNav /> */}
+    </HeaderWrapper>
+  );
+};
 
-   </header>
-)
-export default render;
+export default Header;

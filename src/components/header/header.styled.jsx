@@ -1,34 +1,16 @@
 import styled from "styled-components";
 
-export const headerborder = styled.section
+export const HeaderWrapper = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 20px;
 
-
-@media screen and (min-width: 767px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (min-width: 1280px){};
-
-export const logoheader = styled.section
-
-@media screen and (min-width: 767px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (min-width: 1280px){};
-
-export const logokapustafont = styled.div
-
-@media screen and (min-width: 767px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (min-width: 1280px){};
-
-export const navmenu = styled.div
-
-@media screen and (min-width: 767px) {}
-
-@media screen and (max-width: 768px) {}
-
-@media screen and (min-width: 1280px){};
+  @media screen and (min-width: 768px) {
+    padding: 13px 32px;
+  }
+`;
+export const HeaderIcon = styled.svg`
+  width: 90px;
+  height: 31px;
+`;
