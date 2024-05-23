@@ -11,7 +11,6 @@ const Header = () => {
           <use href={`${icons}#logo-header`}></use>
         </HeaderIcon>
       </Link>
-      
     </HeaderWrapper>
   );
 };
