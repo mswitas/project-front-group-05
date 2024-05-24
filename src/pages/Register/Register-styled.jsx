@@ -5,9 +5,9 @@ import imageMobBg from "../../images/backgroundMobile.png";
 import imageTabBg from "../../images/backgroundTablet.png";
 import imageDeskBg from "../../images/backgroundDesktop.png";
 
-
 export const StyledRegisterPage = styled.div`
   margin: auto auto;
+  height: 100%;
 `;
 
 export const Background = styled.div`
@@ -58,7 +58,7 @@ export const KapustaTabBotLeft = styled(HandySvg)`
   position: absolute;
   top: 740px;
   left: 103px;
-  z-index: -1;
+  z-index: 1;
 
   @media screen and (min-width: 1280px) {
     top: 700px;
@@ -70,7 +70,7 @@ export const KapustaTabBotRight = styled(HandySvg)`
   position: absolute;
   top: 712px;
   left: 197px;
-  z-index: -1;
+  z-index: 1;
   transform: rotate(-90deg);
 
   @media screen and (min-width: 1280px) {

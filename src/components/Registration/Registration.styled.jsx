@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const Form= styled.div`
+export const Form = styled.div`
   justify-content: center;
   padding: 40px 20px 40px 20px;
   top: 255px;
@@ -9,10 +9,11 @@ export const Form= styled.div`
   z-index: 1;
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  box-shadow: 5px 10px 20px 0px #aab2c566;
   border-radius: 30px;
 
   @media screen and (min-width: 768px) {
+    box-shadow: 0px 10px 60px 0px #aab2c533;
     padding: 72px 84px 72px 84px;
     top: 317px;
     left: 171px;
@@ -37,7 +38,6 @@ export const Text = styled.p`
   }
 `;
 
-
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
@@ -59,6 +59,7 @@ export const LabelText = styled.span`
 `;
 
 export const Input = styled.input`
+  box-shadow: inset 0 0 0 1px #f6f7fb, inset 0 0 0 100px #f6f7fb;
   display: flex;
   justify-content: center;
   outline: none;

@@ -10,10 +10,11 @@ export const FormRegister = styled.div`
   width: 280px;
   padding: 40px 20px;
   background-color: #fff;
-  box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+  box-shadow: 5px 10px 20px 0px #aab2c566;
   border-radius: 30px;
 
   @media screen and (min-width: 768px) {
+    box-shadow: 0px 10px 60px 0px #aab2c533;
     left: 50%;
     width: 426px;
     height: 552px;
@@ -106,6 +107,7 @@ export const LabelText = styled.span`
 `;
 
 export const FormInput = styled.input`
+  box-shadow: inset 0 0 0 1px #f6f7fb, inset 0 0 0 100px #f6f7fb;
   display: flex;
   justify-content: center;
   outline: none;

@@ -5,7 +5,10 @@ import imageMobBg from "../../images/backgroundMobile.png";
 import imageTabBg from "../../images/backgroundTablet.png";
 import imageDeskBg from "../../images/backgroundDesktop.png";
 
-export const StyledLoginPage = styled.div``;
+export const StyledLoginPage = styled.div`
+  margin: auto auto;
+  height: 100%;
+`;
 
 export const Background = styled.div`
   position: relative;
@@ -54,7 +57,7 @@ export const KapustaTabBotLeft = styled(HandySvg)`
   position: absolute;
   top: 800px;
   left: 103px;
-  z-index: -1;
+  z-index: 1;
 
   @media screen and (min-width: 1280px) {
     top: 700px;
@@ -66,7 +69,7 @@ export const KapustaTabBotRight = styled(HandySvg)`
   position: absolute;
   top: 765px;
   left: 197px;
-  z-index: -1;
+  z-index: 1;
   transform: rotate(-90deg);
 
   @media screen and (min-width: 1280px) {
