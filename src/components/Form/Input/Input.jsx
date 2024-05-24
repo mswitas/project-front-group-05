@@ -6,11 +6,11 @@ import {
   InputNumber,
   Image,
 } from "./Input.styled";
-import { useMediaQuery } from "react-responsive";
+import { useMatchMedia } from "../../../hooks/MediaQuery";
 import icons from "../../../assets/icons.svg";
 
 export default function Input() {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const { isMobile } = useMatchMedia();
   return (
     <>
       {isMobile ? (

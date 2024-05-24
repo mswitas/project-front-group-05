@@ -3,16 +3,16 @@ import { useDispatch } from "react-redux";
 import { ReactComponent as GoogleSvg } from "../../images/google.svg";
 
 import {
-  StyledformRegister,
-  StyledpromtText,
-  StyledLinkbtnGoogle,
-  StyledlabelText,
-  StyledpromtText1,
-  StyledformInput,
-  StyledcontainerButton,
-  Styledlabel,
+  FormRegister,
+  PromtText,
+  BtnGoogle,
+  LabelText,
+  PromtText1,
+  FormInput,
+  ButtonBox,
+  Label,
   LogInBtn,
-  StyledNavlink,
+  Navlink,
 } from "./LoginForm.styled";
 import { logIn } from "../../redux/auth/operations";
 
@@ -78,31 +78,29 @@ export const LoginForm = () => {
 
   return (
     // Div
-    <StyledformRegister>
+    <FormRegister>
       {/* Google authorization text */}
-      <StyledpromtText>
-        You can log in with your Google Account:
-      </StyledpromtText>
+      <PromtText>You can log in with your Google Account:</PromtText>
       {/* Google button */}
-      <StyledLinkbtnGoogle href="https://kapusta-backend.goit.global/auth/google">
+      <BtnGoogle href="https://demokraci-kapusta.onrender.com/auth/google">
         <GoogleSvg />
-      </StyledLinkbtnGoogle>
+      </BtnGoogle>
       {/* Authorization text */}
-      <StyledpromtText1>
+      <PromtText1>
         Or log in using an email and password, after registering:
-      </StyledpromtText1>
+      </PromtText1>
       {/* Form */}
       <form action="" autoComplete="on" onSubmit={handleSubmit}>
-        <Styledlabel>
-          <StyledlabelText>
+        <Label>
+          <LabelText>
             {emailDirty && emailError && (
               <span style={{ color: "#EB5757", fontSize: 10, paddingTop: 4 }}>
                 {errorSymbol}{" "}
               </span>
             )}
             Email:
-          </StyledlabelText>
-          <StyledformInput
+          </LabelText>
+          <FormInput
             onBlur={blurHandler}
             onChange={emailHandler}
             type="email"
@@ -117,18 +115,18 @@ export const LoginForm = () => {
               {emailError}{" "}
             </div>
           )}
-        </Styledlabel>
+        </Label>
         <div>
-          <Styledlabel>
-            <StyledlabelText>
+          <Label>
+            <LabelText>
               {passwordDirty && passwordError && (
                 <span style={{ color: "#EB5757", fontSize: 10, paddingTop: 4 }}>
                   {errorSymbol}{" "}
                 </span>
               )}
               Password:
-            </StyledlabelText>
-            <StyledformInput
+            </LabelText>
+            <FormInput
               onBlur={blurHandler}
               onChange={passwordHandler}
               type="password"
@@ -143,13 +141,13 @@ export const LoginForm = () => {
                 {passwordError}{" "}
               </div>
             )}
-          </Styledlabel>
+          </Label>
         </div>
-        <StyledcontainerButton>
+        <ButtonBox>
           <LogInBtn type="submit">LOG IN</LogInBtn>
-          <StyledNavlink to="/register">Registration</StyledNavlink>
-        </StyledcontainerButton>
+          <Navlink to="/register">Registration</Navlink>
+        </ButtonBox>
       </form>
-    </StyledformRegister>
+    </FormRegister>
   );
 };

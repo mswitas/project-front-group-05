@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {Picker } from "./Date.styled";
-import { ReactComponent as Calendar } from "../../../assets/icons.svg#calendar";
+import { Picker } from "./Date.styled";
+import icons from "../../../assets/icons.svg";
 
 const Date = ({ startDate, setStartDate }) => {
   const handleClick = (event) => {
@@ -16,7 +16,9 @@ const Date = ({ startDate, setStartDate }) => {
       onClick={onClick}
       ref={ref}
     >
-      <Calendar className="calendarIcon" />
+      <svg className="calendarIcon">
+        <use href={`${icons}#calendar`}></use>
+      </svg>
       {value}
     </button>
   ));

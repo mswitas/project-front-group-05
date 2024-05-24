@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useMediaQuery } from "react-responsive";
+import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
 import {
   selectIncomeTransactions,
@@ -23,12 +23,7 @@ export default function Incomes() {
   // Dispatch
   const dispatch = useDispatch();
   //Media
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1279px)",
-  });
-  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
-
+  const { isMobile, isTablet, isDesktop } = useMatchMedia();
   // Selectors
   const allIncomes = useSelector(selectIncomeTransactions);
   const user = useSelector(selectIsLoggedIn);

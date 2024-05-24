@@ -3,8 +3,8 @@ import React from "react";
 import Summary from "../../components/Summary/Summary";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
 import { BackButton } from "../../components/ModalButtons/BackButton";
-
-import { useMediaQuery } from "react-responsive";
+import { useMatchMedia } from "../../hooks/MediaQuery";
+import Balance from "../../components/Balance/MainBalance/Balance";
 import {
   StyledBg,
   StyledFrame,
@@ -21,14 +21,8 @@ import {
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 
 const Expenses = () => {
+  const { isMobile, isTablet, isDesktop } = useMatchMedia();
   const dispatch = useDispatch();
-
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1279px)",
-  });
-  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
-
   const allExpenses = useSelector(selectExpensesTransactions);
   const user = useSelector(selectIsLoggedIn);
   const balance = useSelector(selectBalance);
@@ -44,10 +38,11 @@ const Expenses = () => {
     <>
       {isMobile && (
         <>
-          <StyledBg />
           <BackButton />
         </>
       )}
+      <Balance />
+      <StyledBg />
       <StyledFrame>
         {/* <Form /> */}
         <StyledTableAndSummaryDiv>

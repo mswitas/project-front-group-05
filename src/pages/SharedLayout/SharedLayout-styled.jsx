@@ -1,28 +1,21 @@
 import styled from "styled-components";
 
 export const SharedLayoutContainer = styled.div`
-
-    display: flex;
-    flex-direction: column;
-    min-width: 320px;
-    background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  box-shadow: 5px 10px 20px 0px #aab2c566;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 320px;
+  background-color: rgba(255, 255, 255, 1);
   @media (min-width: 480px) {
-    body {
-      min-width: 480px;
-      max-width: 767px;
+    width: 320px;
+    margin: 0px auto;
+
+    @media screen and (min-width: 768px) {
+      width: 768px;
     }
-  }
-  @media (min-width: 768px) {
-   
-      font-size: 16px;
-      line-height: 24px;
-      min-width: 768px;
-      max-width: 1279px;
-  }
-  @media (min-width: 1280px) {
-      font-size: 16px;
-      line-height: 27px;
-      min-width: 1280px;
-      max-width: 100%;}
+    @media screen and (min-width: 1280px) {
+      width: 1280px;
+    }
   }
 `;

@@ -81,6 +81,6 @@ HeaderModalWindow.propTypes = {
   children: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
-  changeBalance: PropTypes.func,
+  changeBalance: PropTypes.string,
   text: PropTypes.string,
 };

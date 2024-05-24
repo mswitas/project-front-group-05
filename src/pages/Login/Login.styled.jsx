@@ -1,7 +1,14 @@
 import styled from "styled-components";
 import { HandySvg } from "handy-svg";
 
-export const StyledLoginPage = styled.div``;
+import imageMobBg from "../../images/backgroundMobile.png";
+import imageTabBg from "../../images/backgroundTablet.png";
+import imageDeskBg from "../../images/backgroundDesktop.png";
+
+export const StyledLoginPage = styled.div`
+  margin: auto auto;
+  height: 100%;
+`;
 
 export const Background = styled.div`
   position: relative;
@@ -10,7 +17,7 @@ export const Background = styled.div`
   align-items: center;
   width: 320px;
   height: 342px;
-  background-image: ${(props) => `url(${props.imgMobUrl})`};
+  background-image: url(${imageMobBg});
   background-repeat: no-repeat;
   padding-top: 86px;
 
@@ -20,7 +27,7 @@ export const Background = styled.div`
     padding-right: 32px;
     width: 768px;
     height: 582px;
-    background-image: ${(props) => `url(${props.imgTabUrl})`};
+    background-image: url(${imageTabBg});
     background-repeat: no-repeat;
   }
 
@@ -29,7 +36,7 @@ export const Background = styled.div`
     justify-content: center;
     width: 1280px;
     height: 582px;
-    background-image: ${(props) => `url(${props.imgDeskUrl})`};
+    background-image: url(${imageDeskBg});
     background-repeat: no-repeat;
   }
 `;
@@ -50,7 +57,7 @@ export const KapustaTabBotLeft = styled(HandySvg)`
   position: absolute;
   top: 800px;
   left: 103px;
-  z-index: -1;
+  z-index: 1;
 
   @media screen and (min-width: 1280px) {
     top: 700px;
@@ -62,7 +69,7 @@ export const KapustaTabBotRight = styled(HandySvg)`
   position: absolute;
   top: 765px;
   left: 197px;
-  z-index: -1;
+  z-index: 1;
   transform: rotate(-90deg);
 
   @media screen and (min-width: 1280px) {

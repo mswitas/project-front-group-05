@@ -28,5 +28,5 @@ OrangeButton.propTypes = {
   children: PropTypes.string.isRequired,
   dispatch: PropTypes.func,
   closeModal: PropTypes.func,
-  changeBalance: PropTypes.func,
+  changeBalance: PropTypes.string,
 };

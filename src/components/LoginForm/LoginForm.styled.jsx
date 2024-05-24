@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { OrangeButton } from "../ModalButtons/OrangeButton";
 import styled from "styled-components";
 
-export const StyledformRegister = styled.div`
+export const FormRegister = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,10 +10,11 @@ export const StyledformRegister = styled.div`
   width: 280px;
   padding: 40px 20px;
   background-color: #fff;
-  box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+  box-shadow: 5px 10px 20px 0px #aab2c566;
   border-radius: 30px;
 
   @media screen and (min-width: 768px) {
+    box-shadow: 0px 10px 60px 0px #aab2c533;
     left: 50%;
     width: 426px;
     height: 552px;
@@ -27,7 +28,7 @@ export const StyledformRegister = styled.div`
   }
 `;
 
-export const StyledpromtText = styled.p`
+export const PromtText = styled.p`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -43,7 +44,7 @@ export const StyledpromtText = styled.p`
   }
 `;
 
-export const StyledpromtText1 = styled.p`
+export const PromtText1 = styled.p`
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
@@ -59,7 +60,7 @@ export const StyledpromtText1 = styled.p`
   }
 `;
 
-export const Styledlabel = styled.label`
+export const Label = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -73,7 +74,7 @@ export const LogInBtn = styled(OrangeButton)`
   width: 116px;
 `;
 
-export const StyledLinkbtnGoogle = styled.a`
+export const BtnGoogle = styled.a`
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -94,7 +95,7 @@ export const StyledLinkbtnGoogle = styled.a`
   color: #000000;
 `;
 
-export const StyledlabelText = styled.span`
+export const LabelText = styled.span`
   margin-bottom: 12px;
   width: 100%;
   font-family: "Roboto";
@@ -105,7 +106,8 @@ export const StyledlabelText = styled.span`
   color: #000000;
 `;
 
-export const StyledformInput = styled.input`
+export const FormInput = styled.input`
+  box-shadow: inset 0 0 0 1px #f6f7fb, inset 0 0 0 100px #f6f7fb;
   display: flex;
   justify-content: center;
   outline: none;
@@ -122,12 +124,12 @@ export const StyledformInput = styled.input`
   }
 `;
 
-export const StyledcontainerButton = styled.div`
+export const ButtonBox = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-export const StyledNavlink = styled(NavLink)`
+export const Navlink = styled(NavLink)`
   width: 116px;
   height: 44px;
   background-color: #f5f6fb;
