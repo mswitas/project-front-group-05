@@ -4,6 +4,7 @@ import Summary from "../../components/Summary/Summary";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
 import { BackButton } from "../../components/ModalButtons/BackButton";
 import { useMatchMedia } from "../../hooks/MediaQuery";
+import Balance from "../../components/Balance/MainBalance/Balance";
 import {
   StyledBg,
   StyledFrame,
@@ -37,10 +38,11 @@ const Expenses = () => {
     <>
       {isMobile && (
         <>
-          <StyledBg />
           <BackButton />
         </>
       )}
+      <Balance />
+      <StyledBg />
       <StyledFrame>
         {/* <Form /> */}
         <StyledTableAndSummaryDiv>

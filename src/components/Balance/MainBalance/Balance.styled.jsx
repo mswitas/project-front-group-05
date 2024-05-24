@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const BalanceSection = styled.section`
+  z-index: 1;
   box-sizing: border-box;
-  background: #f2f5fc;
   display: flex;
   align-items: center;
   height: 128px;
@@ -12,7 +12,6 @@ export const BalanceSection = styled.section`
     flex-direction: column-reverse;
     align-items: center;
     gap: 32px;
-    margin-top: 14px;
     padding-inline: 20px;
   }
   @media screen and (min-width: 768px) {
@@ -28,6 +27,7 @@ export const BalanceSection = styled.section`
 `;
 
 export const ReportBox = styled.div`
+  z-index: 1;
   display: flex;
   gap: 15px;
   @media (max-width: 767px) {
@@ -39,7 +39,8 @@ export const ReportBox = styled.div`
     flex-direction: row;
   }
 `;
-export const ReportText = styled.p`
+export const ReportText = styled.p`z-index: 1;
+  z-index: 1;
   font-family: Roboto;
   font-size: 12px;
   font-weight: 400;
@@ -51,18 +52,17 @@ export const ReportText = styled.p`
   padding-top: 7px;
 `;
 export const ReportIcon = styled.svg`
-  width: 14px;
-  height: 14px;
-  padding: 5px;
+  z-index: 1;
+  marign: 5px;
   text-align: center;
 `;
 
 export const SectionBar = styled.svg`
+  z-index: 1;
   @media (max-width: 767px) {
-    width: ;
-    height: ;
-    padding: ;
     margin-bottom: 8px;
   }
 `;
-export const Link = styled(NavLink)``;
+export const Link = styled(NavLink)`
+  z-index: 1;
+`;

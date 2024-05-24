@@ -9,6 +9,7 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalWindow = styled.div`
+  z-index: 1;
   position: fixed;
   top: 250px;
   left: 50%;

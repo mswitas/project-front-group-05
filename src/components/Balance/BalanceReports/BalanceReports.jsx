@@ -14,7 +14,7 @@ const BalanceReports = () => {
   return (
     <BalanceSection>
       <MainPageLink to="/">
-        <MainPageIcon>
+        <MainPageIcon width="14px" height="9px">
           <use href={`${icons}#back-arrow`}></use>
         </MainPageIcon>
         <MainPageText>Main page</MainPageText>
