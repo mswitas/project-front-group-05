@@ -1,7 +1,6 @@
 import React from "react";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
-import { useMediaQuery } from "react-responsive";
-
+import { useMatchMedia } from "../../hooks/MediaQuery";
 
 import {
   StyledLoginPage,
@@ -17,11 +16,9 @@ import {
   KapustaMobTop,
   GroupTablet,
   GroupDesktop,
-} from "./Login-styled";
+} from "./Login.styled";
+
 import Name from "../../images/union.svg";
-import imageMobBg from "../../images/backgroundMobile.png";
-import imageTabBg from "../../images/backgroundTablet.png";
-import imageDeskBg from "../../images/backgroundDesktop.png";
 import kapusta from "../../images/kapusta.svg";
 import tabShadow from "../../images/tabEllipse.svg";
 import groupTablet from "../../images/groupTablet.png";
@@ -31,20 +28,11 @@ import halfKapusta from "../../images/half.png";
 // Login page
 export default function LoginPage() {
   // Media
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1279px)",
-  });
-  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
-
+  const { isMobile, isTablet, isDesktop } = useMatchMedia();
   return (
     <>
       <StyledLoginPage>
-        <Background
-          imgMobUrl={imageMobBg}
-          imgTabUrl={imageTabBg}
-          imgDeskUrl={imageDeskBg}
-        >
+        <Background>
           {/* For mobile */}
           {isMobile && (
             <>

@@ -1,6 +1,6 @@
 import React from "react";
 import { RegistrationForm } from "../../components/Registration/Registration";
-import { useMediaQuery } from "react-responsive";
+import { useMatchMedia } from "../../hooks/MediaQuery";
 
 import {
   StyledRegisterPage,
@@ -17,11 +17,8 @@ import {
   GroupTablet,
   GroupDesktop,
 } from "./Register-styled";
-import Name from "../../images/union.svg";
 
-import imageMobBg from "../../images/backgroundMobile.png";
-import imageTabBg from "../../images/backgroundTablet.png";
-import imageDeskBg from "../../images/backgroundDesktop.png";
+import Name from "../../images/union.svg";
 import kapusta from "../../images/kapusta.svg";
 import tabShadow from "../../images/tabEllipse.svg";
 import groupTablet from "../../images/groupTablet.png";
@@ -31,19 +28,11 @@ import halfKapusta from "../../images/half.png";
 // Register page
 export default function RegisterPage() {
   // Media
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTablet = useMediaQuery({
-    query: "(min-width: 768px) and (max-width: 1279px)",
-  });
-  const isDesktop = useMediaQuery({ query: "(min-width: 1280px)" });
+  const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
   return (
     <StyledRegisterPage>
-      <Background
-        imgMobUrl={imageMobBg}
-        imgTabUrl={imageTabBg}
-        imgDeskUrl={imageDeskBg}
-      >
+      <Background>
         {/* For mobile */}
         {isMobile && (
           <>

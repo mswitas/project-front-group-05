@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { HandySvg } from "handy-svg";
 
+import imageMobBg from "../../images/backgroundMobile.png";
+import imageTabBg from "../../images/backgroundTablet.png";
+import imageDeskBg from "../../images/backgroundDesktop.png";
+
 export const StyledLoginPage = styled.div``;
 
 export const Background = styled.div`
@@ -10,7 +14,7 @@ export const Background = styled.div`
   align-items: center;
   width: 320px;
   height: 342px;
-  background-image: ${(props) => `url(${props.imgMobUrl})`};
+  background-image: url(${imageMobBg});
   background-repeat: no-repeat;
   padding-top: 86px;
 
@@ -20,7 +24,7 @@ export const Background = styled.div`
     padding-right: 32px;
     width: 768px;
     height: 582px;
-    background-image: ${(props) => `url(${props.imgTabUrl})`};
+    background-image: url(${imageTabBg});
     background-repeat: no-repeat;
   }
 
@@ -29,7 +33,7 @@ export const Background = styled.div`
     justify-content: center;
     width: 1280px;
     height: 582px;
-    background-image: ${(props) => `url(${props.imgDeskUrl})`};
+    background-image: url(${imageDeskBg});
     background-repeat: no-repeat;
   }
 `;

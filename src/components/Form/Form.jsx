@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-
+import { useMatchMedia } from "../../hooks/MediaQuery";
 import { useLocation } from "react-router";
 import { useDispatch } from "react-redux";
 import { OrangeButton } from "../ModalButtons/OrangeButton";
@@ -11,7 +11,7 @@ import {
   StyledAllInputsDiv,
   StyledWhiteButton,
 } from "./Form.styled";
-import { useMediaQuery } from "react-responsive";
+
 import Date from "./Date/Date";
 import Category from "./Category/Category";
 import Input from "./Input/Input";
@@ -54,7 +54,8 @@ const Form = () => {
     }
   };
   //Media
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const { isMobile } = useMatchMedia();
+
   // State
   const [elementCategory, setElementCategory] = useState("Category");
   const [startDate, setStartDate] = useState(new Date());
