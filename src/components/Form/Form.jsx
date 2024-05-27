@@ -12,14 +12,17 @@ import {
   StyledWhiteButton,
 } from "./Form.styled";
 
-import Date from "./Date/Date";
-import Category from "./Category/Category";
-import Input from "./Input/Input";
+import DateSelect from "./DateSelect/DateSelect";
+import CategorySelect from "./Category/Category";
+import InputCalc from "./Input/Input";
 
 import { addExpense, addIncome } from "../../redux/transactions/operations";
 
 // Form to add incomes or expenses
 const Form = () => {
+  // State
+  const [elementCategory, setElementCategory] = useState("Category");
+  const [startDate, setStartDate] = useState(new Date());
   //Translate
   const translateBack = (name) => {
     switch (name.trim()) {
@@ -55,10 +58,6 @@ const Form = () => {
   };
   //Media
   const { isMobile } = useMatchMedia();
-
-  // State
-  const [elementCategory, setElementCategory] = useState("Category");
-  const [startDate, setStartDate] = useState(new window.Date());
   // Location
   const location = useLocation();
   // Refs
@@ -70,7 +69,7 @@ const Form = () => {
   let categoryArray;
   let functionToDispatch;
   // Check location for submit incomes or expenses
-  if (location.pathname === "/income" || location.pathname === "/income") {
+  if (location.pathname === "/income") {
     categoryArray = ["Salary", "Additional income"];
     functionToDispatch = addIncome;
   }
@@ -128,11 +127,10 @@ const Form = () => {
   };
 
   return (
-    <>
       <FormWrap>
         {!isMobile && (
           <div className="tabletDatepicker">
-            <Date startDate={startDate} setStartDate={setStartDate} />
+            <DateSelect startDate={startDate} setStartDate={setStartDate} />
           </div>
         )}
         {/* Form */}
@@ -142,13 +140,13 @@ const Form = () => {
             {/* Product input */}
             <InputProduct placeholder="Product description" name="descr" />
             {/* Category input */}
-            <Category
+            <CategorySelect
               categoryArray={categoryArray}
               elementCategory={elementCategory}
               setElementCategory={setElementCategory}
             />
             {/* Value input */}
-            <Input name="sum" />
+            <InputCalc name="sum" />
           </StyledAllInputsDiv>
           {/* Div with buttons */}
           <ButtonWrap>
@@ -159,7 +157,6 @@ const Form = () => {
           </ButtonWrap>
         </StyledForm>
       </FormWrap>
-    </>
   );
 };
 export default Form;

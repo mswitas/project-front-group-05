@@ -10,10 +10,11 @@ import {
 } from "../../redux/transactions/selectors";
 import { getExpenses } from "../../redux/transactions/operations";
 
+import Form from "../../components/Form/Form";
 import Summary from "../../components/Summary/Summary";
 import Balance from "../../components/Balance/MainBalance/Balance";
 import { BackButton } from "../../components/ModalButtons/BackButton";
-import Form from "../../components/Form/Form";
+
 
 import {
   StyledBg,
