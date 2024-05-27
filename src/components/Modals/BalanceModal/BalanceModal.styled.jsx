@@ -18,13 +18,14 @@ export const ContentDiv = styled.div`
 `;
 
 export const Text = styled.p`
-  z-index: 1;
+  z-index: 2;
   margin-bottom: 20px;
   text-align: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  color: black;
 `;
 
 export const DivWithButtons = styled.div`
@@ -40,6 +41,8 @@ export const CloseButton = styled.button`
   top: 20px;
   right: 20px;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 `;
 
 export const ModalBackdrop = styled.div`
@@ -51,4 +54,9 @@ export const ModalBackdrop = styled.div`
   right: 0;
 
   background-color: rgba(0, 0, 0, 0.2);
+`;
+
+export const CloseSVG = styled.svg`
+  width: 15px;
+  height: 15px;
 `;

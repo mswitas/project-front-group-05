@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledOrangeButton = styled.button`
+  box-sizing: border-box;
   padding: 12px 0px;
-  width: 116px;
+  width: 120px;
   border: none;
   background-color: #ff751d;
   border-radius: 16px;
@@ -17,6 +18,7 @@ export const StyledOrangeButton = styled.button`
 `;
 
 export const StyledWhiteButton = styled.button`
+  box-sizing: border-box;
   padding: 12px 34px;
   border: 2px solid #f5f6fb;
   background-color: #fff;
@@ -28,6 +30,7 @@ export const StyledWhiteButton = styled.button`
   text-align: center;
   letter-spacing: 0.02em;
   line-height: 1.17;
+  width: 120px;
 `;
 export const ButtonBack = styled(Link)`
   background-color: transparent;
