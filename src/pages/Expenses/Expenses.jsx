@@ -13,7 +13,7 @@ import { getExpenses } from "../../redux/transactions/operations";
 import Summary from "../../components/Summary/Summary";
 import Balance from "../../components/Balance/MainBalance/Balance";
 import { BackButton } from "../../components/ModalButtons/BackButton";
-// import Form from "../../components/Form/Form";
+import Form from "../../components/Form/Form";
 
 import {
   StyledBg,
@@ -49,7 +49,7 @@ const Expenses = () => {
       <Balance />
       <StyledBg />
       <StyledFrame>
-        {/* <Form /> */}
+        <Form />
         <StyledTableAndSummaryDiv>
           <TransactionList>
             {allExpenses}

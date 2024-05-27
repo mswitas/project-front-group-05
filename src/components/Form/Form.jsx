@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import { useMatchMedia } from "../../hooks/MediaQuery";
 import { useLocation } from "react-router";
 import { useDispatch } from "react-redux";
 import { OrangeButton } from "../ModalButtons/OrangeButton";
+import { useMatchMedia } from "../../hooks/MediaQuery";
 import {
   FormWrap,
   StyledForm,
@@ -58,7 +58,7 @@ const Form = () => {
 
   // State
   const [elementCategory, setElementCategory] = useState("Category");
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new window.Date());
   // Location
   const location = useLocation();
   // Refs

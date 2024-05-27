@@ -3,28 +3,23 @@ import { OrangeButton } from "../ModalButtons/OrangeButton";
 import styled from "styled-components";
 
 export const FormRegister = styled.div`
+  width: 280px;
+  height: 496px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
-  width: 280px;
+  justify-content: center;
   padding: 40px 20px;
+  z-index: 1;
   background-color: #fff;
   box-shadow: 5px 10px 20px 0px #aab2c566;
   border-radius: 30px;
 
   @media screen and (min-width: 768px) {
     box-shadow: 0px 10px 60px 0px #aab2c533;
-    left: 50%;
     width: 426px;
     height: 552px;
     padding: 56px 84px;
-  }
-  @media screen and (min-width: 1280px) {
-    top: 174px;
-    left: 900px;
-    margin: 0;
-    margin-right: 91px;
   }
 `;
 
