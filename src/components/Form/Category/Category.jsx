@@ -4,7 +4,7 @@ import { CategoryDiv, Wrap, SelectBody, Element } from "./Category.styled";
 import icons from "../../../assets/icons.svg";
 
 // Custom selector
-export default function Category({
+export default function CategorySelect({
   elementCategory,
   setElementCategory,
   categoryArray,
@@ -24,7 +24,7 @@ export default function Category({
     <CategoryDiv>
       <Wrap onClick={onSelect}>
         <span>{elementCategory}</span>
-        <svg>
+        <svg width="11px" height="4px">
           <use href={`${icons}#arrow-down`}></use>
         </svg>
       </Wrap>
@@ -41,7 +41,7 @@ export default function Category({
   );
 }
 
-Category.propTypes = {
+CategorySelect.propTypes = {
   elementCategory: PropTypes.string.isRequired,
   setElementCategory: PropTypes.func.isRequired,
   categoryArray: PropTypes.array.isRequired,

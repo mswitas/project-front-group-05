@@ -8,6 +8,7 @@ import {
   DivWithButtons,
   CloseButton,
   ModalBackdrop,
+  CloseSVG,
 } from "./BalanceModal.styled";
 import { OrangeButton } from "../../ModalButtons/OrangeButton";
 import { WhiteButton } from "../../ModalButtons/WhiteButton";
@@ -17,13 +18,7 @@ const modalRoot = document.getElementById("modal-root");
 const body = document.querySelector("body");
 
 // Modal window
-const BalanceModal = ({
-  children,
-  closeModal,
-  dispatch,
-  changeBalance,
-  text,
-}) => {
+const BalanceModal = ({ closeModal, dispatch, changeBalance, text }) => {
   // Close on Esc button
   const handleEscapeClose = (event) => {
     if (event.code === "Escape") {
@@ -53,19 +48,19 @@ const BalanceModal = ({
       <ModalWindow>
         {/* Close button img X */}
         <CloseButton onClick={closeModal}>
-          <svg>
+          <CloseSVG width="12px" height="12px">
             <use href={`${icons}#close`}></use>
-          </svg>
+          </CloseSVG>
         </CloseButton>
         <ContentDiv>
-          <Text>{children}</Text>
+          <Text>Are you sure?</Text>
           <DivWithButtons>
             <OrangeButton
               dispatch={dispatch}
               closeModal={closeModal}
               changeBalance={changeBalance}
             >
-              {text ? text : "YES"}
+              YES
             </OrangeButton>
             <WhiteButton closeModal={closeModal}>NO</WhiteButton>
           </DivWithButtons>
@@ -77,7 +72,6 @@ const BalanceModal = ({
 };
 
 BalanceModal.propTypes = {
-  children: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
   dispatch: PropTypes.func.isRequired,
   changeBalance: PropTypes.string,

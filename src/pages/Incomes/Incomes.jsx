@@ -1,22 +1,25 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import {
   selectIncomeTransactions,
   selectBalance,
 } from "../../redux/transactions/selectors";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import { getIncome } from "../../redux/transactions/operations";
 
+import Summary from "../../components/Summary/Summary";
+import Balance from "../../components/Balance/MainBalance/Balance";
 import { BackButton } from "../../components/ModalButtons/BackButton";
+import Form from "../../components/Form/Form";
+
 import {
   StyledBg,
   StyledFrame,
   StyledTableAndSummaryDiv,
 } from "../Expenses/Expenses.styled";
-// import Form from "../../components/Form/Form";
-import Summary from "../../components/Summary/Summary";
 
 // Incomes page
 export default function Incomes() {
@@ -38,12 +41,14 @@ export default function Incomes() {
     <>
       {isMobile && (
         <>
-          <StyledBg />
           <BackButton />
         </>
       )}
+
+      <Balance />
+      <StyledBg />
       <StyledFrame>
-        {/* <Form /> */}
+        <Form />
         <StyledTableAndSummaryDiv>
           <TransactionList>
             {allIncomes}

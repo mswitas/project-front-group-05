@@ -14,15 +14,15 @@ export const Background = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: auto auto;
   width: 320px;
   height: 342px;
   background-image: url(${imageMobBg});
   background-repeat: no-repeat;
   padding-top: 86px;
+  padding-left: 20px;
 
   @media screen and (min-width: 768px) {
+    padding-top: 80px;
     align-items: center;
     padding-left: 32px;
     padding-right: 32px;
@@ -33,6 +33,7 @@ export const Background = styled.div`
   }
 
   @media screen and (min-width: 1280px) {
+    padding-top: 308px;
     flex-direction: row;
     justify-content: center;
     width: 1280px;
@@ -129,7 +130,6 @@ export const Text = styled.p`
   line-height: 1.15;
   letter-spacing: 0.15em;
   z-index: 2;
-
   color: #52555f;
 
   @media screen and (min-width: 768px) {
@@ -138,9 +138,6 @@ export const Text = styled.p`
     font-size: 16px;
     line-height: 1.18;
     letter-spacing: 0.18em;
-  }
-
-  @media screen and (min-width: 1280px) {
   }
 `;
 

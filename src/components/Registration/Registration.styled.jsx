@@ -2,30 +2,30 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Form = styled.div`
-  justify-content: center;
-  padding: 40px 20px 40px 20px;
-  top: 255px;
   width: 280px;
-  z-index: 1;
+  height: 496px;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  z-index: 1;
   background-color: #fff;
   box-shadow: 5px 10px 20px 0px #aab2c566;
   border-radius: 30px;
 
   @media screen and (min-width: 768px) {
     box-shadow: 0px 10px 60px 0px #aab2c533;
-    padding: 72px 84px 72px 84px;
-    top: 317px;
-    left: 171px;
     width: 426px;
-  }
-  @media screen and (min-width: 1280px) {
-    left: 763px;
-    top: 173px;
+    height: 552px;
+    padding: 56px 84px;
   }
 `;
 
 export const Text = styled.p`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
   text-align: center;

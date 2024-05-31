@@ -1,33 +1,39 @@
-import React from "react";
-// import Form from "../../components/Form/Form";
-import Summary from "../../components/Summary/Summary";
-import { TransactionList } from "../../components/TransactionsList/TransactionList";
-import { BackButton } from "../../components/ModalButtons/BackButton";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import { useMatchMedia } from "../../hooks/MediaQuery";
+import { TransactionList } from "../../components/TransactionsList/TransactionList";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import {
+  selectBalance,
+  selectExpensesTransactions,
+} from "../../redux/transactions/selectors";
+import { getExpenses } from "../../redux/transactions/operations";
+
+import Form from "../../components/Form/Form";
+import Summary from "../../components/Summary/Summary";
 import Balance from "../../components/Balance/MainBalance/Balance";
+import { BackButton } from "../../components/ModalButtons/BackButton";
+
+
 import {
   StyledBg,
   StyledFrame,
   StyledTableAndSummaryDiv,
 } from "./Expenses.styled";
 
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getExpenses } from "../../redux/transactions/operations";
-import {
-  selectBalance,
-  selectExpensesTransactions,
-} from "../../redux/transactions/selectors";
-import { selectIsLoggedIn } from "../../redux/auth/selectors";
-
+// Expenses page
 const Expenses = () => {
+  //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
+  // Dispatch
   const dispatch = useDispatch();
+  // Selectors
   const allExpenses = useSelector(selectExpensesTransactions);
   const user = useSelector(selectIsLoggedIn);
   const balance = useSelector(selectBalance);
   const color = "red";
-
+  // Get expenses data
   useEffect(() => {
     if (user) {
       dispatch(getExpenses());
@@ -44,7 +50,7 @@ const Expenses = () => {
       <Balance />
       <StyledBg />
       <StyledFrame>
-        {/* <Form /> */}
+        <Form />
         <StyledTableAndSummaryDiv>
           <TransactionList>
             {allExpenses}

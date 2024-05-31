@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Picker } from "./Date.styled";
+import { Picker } from "./DateSelect.styled";
 import icons from "../../../assets/icons.svg";
 
-const Date = ({ startDate, setStartDate }) => {
+const DateSelect = ({ startDate, setStartDate }) => {
   const handleClick = (event) => {
     event.preventDefault();
   };
@@ -16,7 +16,7 @@ const Date = ({ startDate, setStartDate }) => {
       onClick={onClick}
       ref={ref}
     >
-      <svg className="calendarIcon">
+      <svg className="calendarIcon" width="20px" height="18px">
         <use href={`${icons}#calendar`}></use>
       </svg>
       {value}
@@ -34,9 +34,9 @@ const Date = ({ startDate, setStartDate }) => {
   );
 };
 
-export default Date;
+export default DateSelect;
 
-Date.propTypes = {
+DateSelect.propTypes = {
   startDate: PropTypes.instanceOf(Date),
   setStartDate: PropTypes.func.isRequired,
 };
