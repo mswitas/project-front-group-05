@@ -25,7 +25,7 @@ export const ModalWindow = styled.div`
 
   @media screen and (min-width: 768px) {
     max-width: 288px;
-    top: 141px;
+    top: 154px;
     left: 38%;
   }
 

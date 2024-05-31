@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink} from "react-router-dom";
 
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
@@ -15,11 +16,12 @@ import Summary from "../../components/Summary/Summary";
 import Balance from "../../components/Balance/MainBalance/Balance";
 import { BackButton } from "../../components/ModalButtons/BackButton";
 
-
 import {
   StyledBg,
   StyledFrame,
   StyledTableAndSummaryDiv,
+  StyledTabsDesktop,
+  StyledTabsMobile,
 } from "./Expenses.styled";
 
 // Expenses page
@@ -49,6 +51,36 @@ const Expenses = () => {
       )}
       <Balance />
       <StyledBg />
+      {isMobile && (
+        <StyledTabsMobile>
+          <NavLink to="/expenses" className="TabMobile">
+            expenses
+          </NavLink>
+          <NavLink to="/income" className="TabMobile">
+            income
+          </NavLink>
+        </StyledTabsMobile>
+      )}
+      {isDesktop && (
+        <StyledTabsDesktop>
+          <NavLink to="/expenses" className="TabDesktop">
+            expenses
+          </NavLink>
+          <NavLink to="/income" className="TabDesktop">
+            income
+          </NavLink>
+        </StyledTabsDesktop>
+      )}
+      {isTablet && (
+        <StyledTabsDesktop>
+          <NavLink to="/expenses" className="TabDesktop">
+            expenses
+          </NavLink>
+          <NavLink to="/income" className="TabDesktop">
+            income
+          </NavLink>
+        </StyledTabsDesktop>
+      )}
       <StyledFrame>
         <Form />
         <StyledTableAndSummaryDiv>
