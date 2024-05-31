@@ -19,6 +19,7 @@ export const StyledBg = styled.div`
 `;
 export const StyledFrame = styled.div`
   /* background-color: transparent; */
+  z-index: 1;
 
   @media screen and (min-width: 768px) {
     margin: 0px auto;
@@ -30,7 +31,7 @@ export const StyledFrame = styled.div`
 
   @media screen and (min-width: 1280px) {
     padding: 32px 32px 61px;
-    max-width: 1098px;
+    width: 1098px;
   }
 `;
 

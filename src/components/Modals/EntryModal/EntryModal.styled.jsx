@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Backdrop = styled.div`
+  z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +25,8 @@ export const ModalWindow = styled.div`
 
   @media screen and (min-width: 768px) {
     max-width: 288px;
-    top: 160px;
+    top: 141px;
+    left: 38%;
   }
 
   @media screen and (min-width: 1280px) {

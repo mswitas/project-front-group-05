@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const Picker = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .calendarIcon {
-    width: 18px;
+    width: 20px;
     height: 20px;
     fill: #52555f;
+    margin-right: 5px;
   }
   .datePicker {
     display: flex;
