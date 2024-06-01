@@ -15,6 +15,7 @@ export const StyledOrangeButton = styled.button`
   letter-spacing: 0.02em;
   font-size: 12px;
   line-height: 1.17;
+  box-shadow: 1px 3px 5px 0px #ff6b0859;
 `;
 
 export const StyledWhiteButton = styled.button`
