@@ -64,7 +64,9 @@ const Form = () => {
   const isHome = location.pathname === "/";
   const isIncExp =
     location.pathname === "/income" || location.pathname === "/expenses";
-  const isTransactions = location.pathname === "/transactions";
+  const isTransactions =
+    location.pathname === "/income/transactions" ||
+    location.pathname === "/expenses/transactions";
   const isVisible = isHome === true;
   // Refs
   const form = useRef(null);
@@ -132,7 +134,7 @@ const Form = () => {
     // dispatch
     dispatch(functionToDispatch(dataToDispatch));
     event.target.reset();
-    setElementCategory("Category");
+    setElementCategory("Product category");
   };
   // Reset Form
   const handleReset = () => {
@@ -141,9 +143,12 @@ const Form = () => {
 
   return (
     <FormWrap>
+      {!isTransactions && (
         <div className="tabletDatepicker">
           <DateSelect startDate={startDate} setStartDate={setStartDate} />
         </div>
+      )}
+
       {/* Form */}
       {!isVisible && !isIncExp && (
         <StyledForm onSubmit={handleSubmit} ref={form}>
@@ -169,7 +174,7 @@ const Form = () => {
           </ButtonWrap>
         </StyledForm>
       )}
-    
+
       {isMobile && isTransactions && <TransactionList />}
     </FormWrap>
   );

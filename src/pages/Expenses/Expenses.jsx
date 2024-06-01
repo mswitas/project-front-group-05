@@ -29,8 +29,10 @@ import {
 const Expenses = () => {
   //Location
   const location = useLocation();
-  const isTransactions = location.pathname === "/transactions";
-  
+  const isTransactions =
+    location.pathname === "/income/transactions" ||
+    location.pathname === "/expenses/transactions";
+
   //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
   // Dispatch
@@ -54,9 +56,9 @@ const Expenses = () => {
           <BackButton />
         </>
       )}
-      <Balance />
+      {!isTransactions && <Balance />}
       <StyledBg />
-      {isMobile && (
+      {isMobile && !isTransactions && (
         <StyledTabsMobile>
           <NavLink to="/expenses" className="TabMobile">
             expenses
@@ -88,7 +90,6 @@ const Expenses = () => {
       )}
       <StyledFrame>
         <Form />
-        {/* {isTransactions &&()} */}
         <StyledTableAndSummaryDiv>
           <TransactionList>
             {allExpenses}
