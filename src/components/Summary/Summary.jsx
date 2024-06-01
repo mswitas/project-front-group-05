@@ -48,10 +48,10 @@ const Summary = () => {
   const isLoading = useSelector(selectIsLoading);
   let data;
 
-  if (location.pathname === "/income") {
+  if (location.pathname === "/income" || "/income/transactions") {
     data = Object.entries(incomeData) ?? [];
   }
-  if (location.pathname === "/expenses" || "/") {
+  if (location.pathname === "/expenses" || "/" || "/expenses/transactions") {
     data = Object.entries(expensesData) ?? [];
   }
 

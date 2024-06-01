@@ -21,8 +21,12 @@ const App = () => {
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Expences />} />
-        <Route path="/expenses" element={<Expences />} />
-        <Route path="/income" element={<Income />} />
+        <Route path="/expenses" element={<Expences />}>
+          <Route path="/expenses/transactions" element={<Expences />} />
+        </Route>
+        <Route path="/income" element={<Income />}>
+          <Route path="/income/transactions" element={<Income />} />
+        </Route>
         <Route path="/reports" element={<Reports />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<RegisterPage />} />

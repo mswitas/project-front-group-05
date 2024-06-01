@@ -15,6 +15,7 @@ import {
 import DateSelect from "./DateSelect/DateSelect";
 import CategorySelect from "./Category/Category";
 import InputCalc from "./Input/Input";
+import { TransactionList } from "../TransactionsList/TransactionList";
 
 import { addExpense, addIncome } from "../../redux/transactions/operations";
 
@@ -60,6 +61,11 @@ const Form = () => {
   const { isMobile } = useMatchMedia();
   // Location
   const location = useLocation();
+  const isHome = location.pathname === "/";
+  const isIncExp =
+    location.pathname === "/income" || location.pathname === "/expenses";
+  const isTransactions = location.pathname === "/transactions";
+  const isVisible = isHome === true;
   // Refs
   const form = useRef(null);
   // Dispatch
@@ -69,11 +75,18 @@ const Form = () => {
   let categoryArray;
   let functionToDispatch;
   // Check location for submit incomes or expenses
-  if (location.pathname === "/income") {
+  if (
+    location.pathname === "/income" ||
+    location.pathname === "/income/transactions"
+  ) {
     categoryArray = ["Salary", "Additional income"];
     functionToDispatch = addIncome;
   }
-  if (location.pathname === "/expenses" || location.pathname === "/") {
+  if (
+    location.pathname === "/expenses" ||
+    location.pathname === "/" ||
+    location.pathname === "/expenses/transactions"
+  ) {
     categoryArray = [
       "Products",
       "ЗСУ",
@@ -127,13 +140,12 @@ const Form = () => {
   };
 
   return (
-      <FormWrap>
-        {!isMobile && (
-          <div className="tabletDatepicker">
-            <DateSelect startDate={startDate} setStartDate={setStartDate} />
-          </div>
-        )}
-        {/* Form */}
+    <FormWrap>
+        <div className="tabletDatepicker">
+          <DateSelect startDate={startDate} setStartDate={setStartDate} />
+        </div>
+      {/* Form */}
+      {!isVisible && !isIncExp && (
         <StyledForm onSubmit={handleSubmit} ref={form}>
           {/* Div with inputs */}
           <StyledAllInputsDiv>
@@ -156,7 +168,10 @@ const Form = () => {
             </StyledWhiteButton>
           </ButtonWrap>
         </StyledForm>
-      </FormWrap>
+      )}
+    
+      {isMobile && isTransactions && <TransactionList />}
+    </FormWrap>
   );
 };
 export default Form;

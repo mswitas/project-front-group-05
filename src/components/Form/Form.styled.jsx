@@ -4,14 +4,21 @@ export const FormWrap = styled.div`
   z-index: 1;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   @media screen and (min-width: 768px) {
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
   }
 
   .tabletDatepicker {
+    margin-block: 40px;
     @media screen and (min-width: 768px) {
       margin-top: 12px;
+      margin-bottom: 0px;
+    }
+    .datepickerMobile {
+      display: inline;
     }
   }
 `;

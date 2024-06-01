@@ -33,9 +33,27 @@ export const StyledWhiteButton = styled.button`
   width: 120px;
 `;
 export const ButtonBack = styled(Link)`
+  z-index: 2;
   background-color: transparent;
   border: none;
   display: flex;
   align-items: center;
-  margin: 14px 0px 14px 16px;
+  margin: 16px 0px 16px 20px;
+`;
+export const ButtonBackWithText = styled(Link)`
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: 16px 0px 14px 20px;
+`;
+export const ButtonBackText = styled.p`
+  padding-left: 4px;
+  padding-inline: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 11.72px;
+  letter-spacing: 0.02em;
+  text-align: center;
 `;

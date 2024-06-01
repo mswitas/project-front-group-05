@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router";
 
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
@@ -26,6 +27,10 @@ import {
 
 // Expenses page
 const Expenses = () => {
+  //Location
+  const location = useLocation();
+  const isTransactions = location.pathname === "/transactions";
+  
   //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
   // Dispatch
@@ -83,6 +88,7 @@ const Expenses = () => {
       )}
       <StyledFrame>
         <Form />
+        {/* {isTransactions &&()} */}
         <StyledTableAndSummaryDiv>
           <TransactionList>
             {allExpenses}
