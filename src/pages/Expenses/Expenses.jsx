@@ -5,6 +5,7 @@ import { useLocation } from "react-router";
 
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
+import { TransactionListDesktop } from "../../components/TransactionsList/TransactionListDesktop";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import {
   selectBalance,
@@ -32,7 +33,7 @@ const Expenses = () => {
   const isTransactions =
     location.pathname === "/income/transactions" ||
     location.pathname === "/expenses/transactions";
-  
+
   //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
   // Dispatch
@@ -91,10 +92,13 @@ const Expenses = () => {
       <StyledFrame>
         <Form />
         <StyledTableAndSummaryDiv>
-          <TransactionList>
-            {allExpenses}
-            {color}
-          </TransactionList>
+          {(isTablet || isDesktop) && (
+            <TransactionListDesktop>
+              {allExpenses}
+              {color}
+            </TransactionListDesktop>
+          )}
+          {isMobile && <TransactionList />}
           {isDesktop && <Summary />}
         </StyledTableAndSummaryDiv>
       </StyledFrame>

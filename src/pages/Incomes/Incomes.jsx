@@ -5,6 +5,7 @@ import { useLocation } from "react-router";
 
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
+import { TransactionListDesktop } from "../../components/TransactionsList/TransactionListDesktop";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import {
   selectIncomeTransactions,
@@ -88,11 +89,14 @@ export default function Incomes() {
       <StyledFrame>
         <Form />
         <StyledTableAndSummaryDiv>
-          <TransactionList>
-            {allIncomes}
-            {color}
-          </TransactionList>
+          {(isTablet || isDesktop) && (
+            <TransactionListDesktop>
+              {allIncomes}
+              {color}
+            </TransactionListDesktop>
+          )}
           {isDesktop && <Summary />}
+          {isMobile && <TransactionList />}
         </StyledTableAndSummaryDiv>
       </StyledFrame>
       {isTablet && <Summary />}

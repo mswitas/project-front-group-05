@@ -174,6 +174,30 @@ const Form = () => {
           </ButtonWrap>
         </StyledForm>
       )}
+      {!isMobile && (
+        <StyledForm onSubmit={handleSubmit} ref={form}>
+          {/* Div with inputs */}
+          <StyledAllInputsDiv>
+            {/* Product input */}
+            <InputProduct placeholder="Product description" name="descr" />
+            {/* Category input */}
+            <CategorySelect
+              categoryArray={categoryArray}
+              elementCategory={elementCategory}
+              setElementCategory={setElementCategory}
+            />
+            {/* Value input */}
+            <InputCalc name="sum" />
+          </StyledAllInputsDiv>
+          {/* Div with buttons */}
+          <ButtonWrap>
+            <OrangeButton type="submit">INPUT</OrangeButton>
+            <StyledWhiteButton type="button" onClick={handleReset}>
+              CLEAR
+            </StyledWhiteButton>
+          </ButtonWrap>
+        </StyledForm>
+      )}
 
       {isMobile && isTransactions && <TransactionList />}
     </FormWrap>
