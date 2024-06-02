@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Backdrop = styled.div`
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -10,7 +10,7 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalWindow = styled.div`
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   top: 250px;
   left: 50%;
@@ -49,6 +49,7 @@ export const ModalWindow = styled.div`
 `;
 
 export const ModalTitle = styled.h2`
+  z-index: 3;
   padding-top: 40px;
   padding-left: 24px;
   padding-right: 24px;
@@ -66,6 +67,7 @@ export const ModalTitle = styled.h2`
 `;
 
 export const ModalText = styled.p`
+  z-index: 3;
   padding-bottom: 49px;
   padding-left: 24px;
   padding-right: 24px;

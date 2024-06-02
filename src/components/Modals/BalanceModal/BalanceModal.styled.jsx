@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalWindow = styled.div`
-  z-index: 1;
+  z-index: 3;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -13,12 +13,12 @@ export const ModalWindow = styled.div`
 `;
 
 export const ContentDiv = styled.div`
-  z-index: 1;
+  z-index: ;
   padding: 50px 58px 60px;
 `;
 
 export const Text = styled.p`
-  z-index: 2;
+  z-index: 3;
   margin-bottom: 20px;
   text-align: center;
   font-weight: 500;
@@ -29,13 +29,13 @@ export const Text = styled.p`
 `;
 
 export const DivWithButtons = styled.div`
-  z-index: 1;
+  z-index: 3;
   display: flex;
   gap: 15px;
 `;
 
 export const CloseButton = styled.button`
-  z-index: 1;
+  z-index: 3;
   border: none;
   position: absolute;
   top: 20px;
@@ -46,7 +46,7 @@ export const CloseButton = styled.button`
 `;
 
 export const ModalBackdrop = styled.div`
-  z-index: 1;
+  z-index: 3;
   position: absolute;
   top: 0;
   left: 0;
