@@ -20,7 +20,7 @@ export const StyledBg = styled.div`
 `;
 export const StyledFrame = styled.div`
   /* background-color: transparent; */
-  z-index: 1;
+  z-index: 2;
   box-sizing: border-box;
 
   @media screen and (min-width: 768px) {
@@ -41,7 +41,7 @@ export const StyledFrame = styled.div`
 `;
 
 export const StyledTableAndSummaryDiv = styled.div`
-  z-index: 1;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   margin-top: 60px;

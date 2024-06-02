@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router";
 
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
@@ -26,6 +27,11 @@ import {
 
 // Incomes page
 export default function Incomes() {
+  //Location
+  const location = useLocation();
+  const isTransactions =
+    location.pathname === "/income/transactions" ||
+    location.pathname === "/expenses/transactions";
   // Dispatch
   const dispatch = useDispatch();
   //Media
@@ -47,9 +53,9 @@ export default function Incomes() {
           <BackButton />
         </>
       )}
-      <Balance />
+      {!isTransactions && <Balance />}
       <StyledBg />
-      {isMobile && (
+      {isMobile && !isTransactions && (
         <StyledTabsMobile>
           <NavLink to="/expenses" className="TabMobile">
             expenses

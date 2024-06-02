@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ReactComponent as DeleteIcon } from "../../assets/icons.svg#delete";
 import { selectAllTransactions } from "../../redux/transactions/selectors";
 import { deleteTransaction } from "../../redux/transactions/operations";
+import icons from "../../assets/icons.svg"
 
 import {
   ItemName,
@@ -107,7 +107,9 @@ export const TransactionList = () => {
                 style={{ cursor: "pointer" }}
               >
                 {/* Delete icon */}
-                <DeleteIcon />
+                <svg width="18px" height="18px">
+                  <use href={`${icons}#delete`}></use>
+                </svg>
               </span>
             </SumCont>
           </Item>

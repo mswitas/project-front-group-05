@@ -32,7 +32,7 @@ const Expenses = () => {
   const isTransactions =
     location.pathname === "/income/transactions" ||
     location.pathname === "/expenses/transactions";
-
+  
   //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
   // Dispatch
