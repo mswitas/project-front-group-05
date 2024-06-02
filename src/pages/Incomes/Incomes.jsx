@@ -96,7 +96,7 @@ export default function Incomes() {
             </TransactionListDesktop>
           )}
           {isDesktop && <Summary />}
-          {isMobile && <TransactionList />}
+          {isMobile && !isTransactions && <TransactionList />}
         </StyledTableAndSummaryDiv>
       </StyledFrame>
       {isTablet && <Summary />}

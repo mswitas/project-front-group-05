@@ -198,8 +198,6 @@ const Form = () => {
           </ButtonWrap>
         </StyledForm>
       )}
-
-      {isMobile && isTransactions && <TransactionList />}
     </FormWrap>
   );
 };
