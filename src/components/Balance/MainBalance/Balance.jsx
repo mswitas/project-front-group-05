@@ -3,20 +3,22 @@ import {
   ReportBox,
   ReportIcon,
   ReportText,
-  Link
+  Link,
 } from "./Balance.styled";
-
+import { useLocation } from "react-router-dom";
 import BalanceBar from "../BalanceBar/BalanceBar";
 import icons from "../../../assets/icons.svg";
 
 const Balance = () => {
+  // Location
+  const location = useLocation();
   return (
     <BalanceSection>
       <BalanceBar />
       <ReportBox>
         <ReportText>Reports</ReportText>
-        <Link to='/reports'>
-          <ReportIcon >
+        <Link to="/reports" state={{ from: location }}>
+          <ReportIcon width="14px" height="14px">
             <use href={`${icons}#reports`}></use>
           </ReportIcon>
         </Link>

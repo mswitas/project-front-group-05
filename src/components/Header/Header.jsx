@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HeaderWrapper, HeaderIcon } from "./Header-styled";
 import icons from "../../assets/icons.svg";
-// import AuthorizatedNav from "../AuthorizatedNav/AuthorizatedNav";
+import AuthorizatedNav from "../AuthorizatedNav/AuthorizatedNav";
 
 const Header = () => {
   return (
@@ -11,7 +11,7 @@ const Header = () => {
           <use href={`${icons}#logo-header`}></use>
         </HeaderIcon>
       </Link>
-      {/* <AuthorizatedNav /> */}
+      <AuthorizatedNav />
     </HeaderWrapper>
   );
 };

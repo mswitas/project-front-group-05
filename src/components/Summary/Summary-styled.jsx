@@ -4,20 +4,26 @@ export const Table = styled.ul`
   display: none;
 
   @media screen and (min-width: 768px) {
-    min-width: 213px;
-    min-height: 280px;
-    height: 100%;
+    width: 213px;
+    height: 280px;
     background-color: #f5f6fb;
     display: inline-flex;
     flex-direction: column;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.06px;
+    letter-spacing: 0.02em;
     text-align: center;
     border-radius: 16px;
     border-bottom-left-radius: 0px;
     margin-top: 40px;
+    margin-left: 32px;
   }
 
   @media screen and (min-width: 1280px) {
     margin-top: 0px;
+    margin-left: 74px;
   }
 `;
 

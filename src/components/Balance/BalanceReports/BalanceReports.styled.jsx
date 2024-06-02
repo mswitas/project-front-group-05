@@ -56,10 +56,8 @@ export const MainPageText = styled.p`
   }
 `;
 export const MainPageIcon = styled.svg`
-  width: 18px;
-  height: 12px;
-  padding-inline: 3px;
-  padding-block: 6px;
+  margin-inline: 3px;
+  margin-block: 6px;
 `;
 
 export const MobileWrapper = styled.div`
