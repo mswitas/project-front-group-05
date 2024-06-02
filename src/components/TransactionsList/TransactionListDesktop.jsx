@@ -5,7 +5,7 @@ import { selectIsLoading } from "../../redux/transactions/selectors";
 import { deleteTransaction } from "../../redux/transactions/operations";
 
 import { TransactionTable } from "./TransactionListDesktop.styled";
-import icons from "../../assets/icons.svg";
+// import icons from "../../assets/icons.svg";
 
 export const TransactionListDesktop = ({ children }) => {
   //Translation

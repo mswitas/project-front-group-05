@@ -15,7 +15,7 @@ import {
 import DateSelect from "./DateSelect/DateSelect";
 import CategorySelect from "./Category/Category";
 import InputCalc from "./Input/Input";
-import { TransactionList } from "../TransactionsList/TransactionList";
+
 
 import { addExpense, addIncome } from "../../redux/transactions/operations";
 
