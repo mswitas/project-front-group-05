@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router";
 
 import { useMatchMedia } from "../../hooks/MediaQuery";
 import { TransactionList } from "../../components/TransactionsList/TransactionList";
+import { TransactionListDesktop } from "../../components/TransactionsList/TransactionListDesktop";
 import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import {
   selectBalance,
@@ -15,15 +18,22 @@ import Summary from "../../components/Summary/Summary";
 import Balance from "../../components/Balance/MainBalance/Balance";
 import { BackButton } from "../../components/ModalButtons/BackButton";
 
-
 import {
   StyledBg,
   StyledFrame,
   StyledTableAndSummaryDiv,
+  StyledTabsDesktop,
+  StyledTabsMobile,
 } from "./Expenses.styled";
 
 // Expenses page
 const Expenses = () => {
+  //Location
+  const location = useLocation();
+  const isTransactions =
+    location.pathname === "/income/transactions" ||
+    location.pathname === "/expenses/transactions";
+
   //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
   // Dispatch
@@ -47,15 +57,48 @@ const Expenses = () => {
           <BackButton />
         </>
       )}
-      <Balance />
+      {!isTransactions && <Balance />}
       <StyledBg />
+      {isMobile && !isTransactions && (
+        <StyledTabsMobile>
+          <NavLink to="/expenses" className="TabMobile">
+            expenses
+          </NavLink>
+          <NavLink to="/income" className="TabMobile">
+            income
+          </NavLink>
+        </StyledTabsMobile>
+      )}
+      {isDesktop && (
+        <StyledTabsDesktop>
+          <NavLink to="/expenses" className="TabDesktop">
+            expenses
+          </NavLink>
+          <NavLink to="/income" className="TabDesktop">
+            income
+          </NavLink>
+        </StyledTabsDesktop>
+      )}
+      {isTablet && (
+        <StyledTabsDesktop>
+          <NavLink to="/expenses" className="TabDesktop">
+            expenses
+          </NavLink>
+          <NavLink to="/income" className="TabDesktop">
+            income
+          </NavLink>
+        </StyledTabsDesktop>
+      )}
       <StyledFrame>
         <Form />
         <StyledTableAndSummaryDiv>
-          <TransactionList>
-            {allExpenses}
-            {color}
-          </TransactionList>
+          {(isTablet || isDesktop) && (
+            <TransactionListDesktop>
+              {allExpenses}
+              {color}
+            </TransactionListDesktop>
+          )}
+          {isMobile && <TransactionList />}
           {isDesktop && <Summary />}
         </StyledTableAndSummaryDiv>
       </StyledFrame>

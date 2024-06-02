@@ -16,6 +16,7 @@ import DateSelect from "./DateSelect/DateSelect";
 import CategorySelect from "./Category/Category";
 import InputCalc from "./Input/Input";
 
+
 import { addExpense, addIncome } from "../../redux/transactions/operations";
 
 // Form to add incomes or expenses
@@ -60,6 +61,13 @@ const Form = () => {
   const { isMobile } = useMatchMedia();
   // Location
   const location = useLocation();
+  const isHome = location.pathname === "/";
+  const isIncExp =
+    location.pathname === "/income" || location.pathname === "/expenses";
+  const isTransactions =
+    location.pathname === "/income/transactions" ||
+    location.pathname === "/expenses/transactions";
+  const isVisible = isHome === true;
   // Refs
   const form = useRef(null);
   // Dispatch
@@ -69,11 +77,18 @@ const Form = () => {
   let categoryArray;
   let functionToDispatch;
   // Check location for submit incomes or expenses
-  if (location.pathname === "/income") {
+  if (
+    location.pathname === "/income" ||
+    location.pathname === "/income/transactions"
+  ) {
     categoryArray = ["Salary", "Additional income"];
     functionToDispatch = addIncome;
   }
-  if (location.pathname === "/expenses" || location.pathname === "/") {
+  if (
+    location.pathname === "/expenses" ||
+    location.pathname === "/" ||
+    location.pathname === "/expenses/transactions"
+  ) {
     categoryArray = [
       "Products",
       "ЗСУ",
@@ -119,7 +134,7 @@ const Form = () => {
     // dispatch
     dispatch(functionToDispatch(dataToDispatch));
     event.target.reset();
-    setElementCategory("Category");
+    setElementCategory("Product category");
   };
   // Reset Form
   const handleReset = () => {
@@ -127,13 +142,15 @@ const Form = () => {
   };
 
   return (
-      <FormWrap>
-        {!isMobile && (
-          <div className="tabletDatepicker">
-            <DateSelect startDate={startDate} setStartDate={setStartDate} />
-          </div>
-        )}
-        {/* Form */}
+    <FormWrap>
+      {!isTransactions && (
+        <div className="tabletDatepicker">
+          <DateSelect startDate={startDate} setStartDate={setStartDate} />
+        </div>
+      )}
+
+      {/* Form */}
+      {!isVisible && !isIncExp && (
         <StyledForm onSubmit={handleSubmit} ref={form}>
           {/* Div with inputs */}
           <StyledAllInputsDiv>
@@ -156,7 +173,32 @@ const Form = () => {
             </StyledWhiteButton>
           </ButtonWrap>
         </StyledForm>
-      </FormWrap>
+      )}
+      {!isMobile && (
+        <StyledForm onSubmit={handleSubmit} ref={form}>
+          {/* Div with inputs */}
+          <StyledAllInputsDiv>
+            {/* Product input */}
+            <InputProduct placeholder="Product description" name="descr" />
+            {/* Category input */}
+            <CategorySelect
+              categoryArray={categoryArray}
+              elementCategory={elementCategory}
+              setElementCategory={setElementCategory}
+            />
+            {/* Value input */}
+            <InputCalc name="sum" />
+          </StyledAllInputsDiv>
+          {/* Div with buttons */}
+          <ButtonWrap>
+            <OrangeButton type="submit">INPUT</OrangeButton>
+            <StyledWhiteButton type="button" onClick={handleReset}>
+              CLEAR
+            </StyledWhiteButton>
+          </ButtonWrap>
+        </StyledForm>
+      )}
+    </FormWrap>
   );
 };
 export default Form;

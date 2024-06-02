@@ -6,7 +6,6 @@ export const BalanceSection = styled.section`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  height: 128px;
 
   @media screen and (max-width: 767px) {
     flex-direction: column-reverse;
@@ -18,11 +17,14 @@ export const BalanceSection = styled.section`
     justify-content: space-between;
     flex-direction: row;
     padding-inline: 32px;
+    margin-bottom: 60px;
+    margin-top: 40px;
   }
   @media screen and (min-width: 1280px) {
     justify-content: flex-end;
     gap: 298px;
     padding-inline: 91px;
+    margin-bottom: 8px;
   }
 `;
 
@@ -39,7 +41,8 @@ export const ReportBox = styled.div`
     flex-direction: row;
   }
 `;
-export const ReportText = styled.p`z-index: 1;
+export const ReportText = styled.p`
+  z-index: 1;
   z-index: 1;
   font-family: Roboto;
   font-size: 12px;

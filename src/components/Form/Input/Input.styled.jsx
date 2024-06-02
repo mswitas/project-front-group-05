@@ -28,6 +28,7 @@ export const InputMobile = styled.input`
 `;
 
 export const Span = styled.span`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +89,8 @@ export const InputNumber = styled.input`
 
 export const Image = styled.svg`
   position: absolute;
-  top: 12px;
-  left: 75px;
+  @media screen and (min-width: 768px) {
+    top: 12px;
+    left: 75px;
+  }
 `;

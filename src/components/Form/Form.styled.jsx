@@ -1,16 +1,24 @@
 import styled from "styled-components";
 
 export const FormWrap = styled.div`
+  z-index: 1;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   @media screen and (min-width: 768px) {
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
   }
 
   .tabletDatepicker {
+    margin-block: 40px;
     @media screen and (min-width: 768px) {
       margin-top: 12px;
+      margin-bottom: 0px;
+    }
+    .datepickerMobile {
+      display: inline;
     }
   }
 `;
@@ -91,9 +99,8 @@ export const ButtonWrap = styled.div`
 `;
 
 export const StyledWhiteButton = styled.button`
-  padding: 12px 34px;
-  border: 2px solid #f5f6fb;
-  background-color: #fff;
+  border: none;
+  background-color: #f5f6fb;
   border-radius: 16px;
   color: #52555f;
   font-size: 12px;
@@ -102,4 +109,13 @@ export const StyledWhiteButton = styled.button`
   text-align: center;
   letter-spacing: 0.02em;
   line-height: 1.17;
+  padding: 12px 34px;
+  box-shadow: 1px 2px 5px 0px #aab2c566;
+  border-radius: 16px;
+  @media screen and (min-width: 768px) {
+    border: 2px solid #f5f6fb;
+    background-color: #fff;
+    color: #52555f;
+    box-shadow: none;
+  }
 `;

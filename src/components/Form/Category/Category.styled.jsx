@@ -2,11 +2,10 @@ import styled from "@emotion/styled";
 
 export const CategoryDiv = styled.div`
   position: relative;
-
-  /* margin-left: 20px;
-  margin-right: 20px; */
+  margin-left: 20px;
 
   @media screen and (min-width: 768px) {
+    margin-left: 0px;
     height: 44px;
   }
 `;

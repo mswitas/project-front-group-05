@@ -1,13 +1,14 @@
 import styled from "styled-components";
 export const List = styled.ul`
   width: 320px;
-
+  height: auto;
+  z-index: 2;
   @media screen and (min-width: 768px) {
     display: none;
   }
 `;
 
-export const Item= styled.li`
+export const Item = styled.li`
   display: flex;
   justify-content: space-between;
 
