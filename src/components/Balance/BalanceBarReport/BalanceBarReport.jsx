@@ -62,8 +62,8 @@ const BalanceBarReport = () => {
           dispatch={onClick}
           text="SURE"
           balance={balance}
-        />
-      
+        >  Are you sure?
+      </BalanceModal>
       )}
     </>
   );
