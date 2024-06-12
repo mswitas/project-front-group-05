@@ -1,5 +1,6 @@
 import BalanceReports from "../../components/Balance/BalanceReports/BalanceReports";
 import Chart from "../../components/Chart/Chart";
+import { ReportIncExp } from "../../components/Reports/ReportIncExp";
 import { Background } from "./Reports.styled";
 
 
@@ -9,6 +10,7 @@ const Reports = () => {
   return (
     <Background>
       <BalanceReports />
+      <ReportIncExp/>
       <Chart data={data} labels={labels} />
     </Background>
   );
