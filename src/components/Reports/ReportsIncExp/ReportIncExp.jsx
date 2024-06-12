@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectReports } from "../../redux/reports/selectors";
-import { filteredDataAction } from "../../redux/reportsQuery/reportsQuery.slice";
-import Arrows from "../MonthsPaginator/Arrows/Arrows";
+import { selectReports } from "../../../redux/reports/selectors";
+import { filteredDataAction } from "../../../redux/reportsQuery/reportsQuery.slice";
+import Arrows from "../../MonthsPaginator/Arrows/Arrows";
 
 import {
   StatisticsWrapper,
@@ -34,7 +34,7 @@ export const ReportIncExp = () => {
   };
 
   return (
-    <div>
+    <>
       <StatisticsWrapper>
         <StatisticsList>
           <StatisticsElement className="expenses">
@@ -54,6 +54,6 @@ export const ReportIncExp = () => {
           <BudgetName>{budget}</BudgetName>
         </Arrows>
       </IconsBox>
-    </div>
+    </>
   );
 };

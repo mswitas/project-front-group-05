@@ -29,7 +29,7 @@ const Form = () => {
     switch (name.trim()) {
       case "Products":
         return "Продукты";
-      case "ЗСУ":
+      case "Alcohol":
         return "Алкоголь";
       case "Entertainment":
         return "Развлечения";
