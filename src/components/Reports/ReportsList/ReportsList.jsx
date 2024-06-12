@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectReports } from "../../../redux/reports/selectors";
 import { filteredDataAction } from "../../../redux/reportsQuery/reportsQuery.slice";
+import { List, Item, ItemIncome,ItemSvg, BgcSvg,   } from "./ReportsList.styled";
 
 import icons from "../../../assets/icons.svg";
 

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectReports } from "../../../redux/reports/selectors";
 import { filteredDataAction } from "../../../redux/reportsQuery/reportsQuery.slice";
 import Arrows from "../../MonthsPaginator/Arrows/Arrows";
+import { ReportsList } from "../ReportsList/ReportsList";
 
 import {
   StatisticsWrapper,
@@ -53,6 +54,7 @@ export const ReportIncExp = () => {
         <Arrows onButtonClick={handleClick}>
           <BudgetName>{budget}</BudgetName>
         </Arrows>
+        <ReportsList onChange={budget} />
       </IconsBox>
     </>
   );
