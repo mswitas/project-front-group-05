@@ -6,21 +6,17 @@ import backGroundDiagram from "../../images/bgDeskKapusta.png";
 import backgroundTableTabl from "../../images/kapustaTab.svg";
 export const Background = styled.div`
   background-image: url(${backgroundMobile});
-  background-position: top;
+  background-position-y: -56px;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 320px, 342px;
   padding: 0 20px;
   @media screen and (min-width: 768px) {
-    /* margin: 0 32px; */
     padding: 0 32px;
     background-image: url(${backgroundTablet}), url(${backgroundTableTabl});
-    background-size: 100%, 25%;
-    background-position: top, bottom -40px right 88px;
+    background-size: 768px, 583px;
   }
   @media screen and (min-width: 1280px) {
     padding: 0 123px;
     background-image: url(${backgroundDesktop}), url(${backGroundDiagram});
-    background-size: 100%;
-    background-position: top, bottom;
-  }
+    background-size: 100%; }
 `;

@@ -86,3 +86,26 @@ export const StatsExpenses = styled.span`
     margin-left: 15px;
   }
 `;
+export const BudgetName = styled.p`
+  width: 120px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #000000;
+`;
+
+export const IconsBox = styled.div`
+
+  @media screen and (min-width: 768px) {
+    padding: 20px 40px;
+    margin-top: 32px;
+    border-radius: 30px;
+    background-color: #fff;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 20px 205px;
+  }
+`;

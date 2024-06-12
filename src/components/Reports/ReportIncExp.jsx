@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectReports } from "../../redux/reports/selectors";
 import { filteredDataAction } from "../../redux/reportsQuery/reportsQuery.slice";
+import Arrows from "../MonthsPaginator/Arrows/Arrows";
 
 import {
   StatisticsWrapper,
@@ -9,8 +10,9 @@ import {
   StatisticsElement,
   StatsIncome,
   StatsExpenses,
+  BudgetName,
+  IconsBox,
 } from "./ReportIncExp.styled";
-
 
 // // Report List
 export const ReportIncExp = () => {
@@ -47,6 +49,11 @@ export const ReportIncExp = () => {
           </StatisticsElement>
         </StatisticsList>
       </StatisticsWrapper>
+      <IconsBox>
+        <Arrows onButtonClick={handleClick}>
+          <BudgetName>{budget}</BudgetName>
+        </Arrows>
+      </IconsBox>
     </div>
   );
 };
