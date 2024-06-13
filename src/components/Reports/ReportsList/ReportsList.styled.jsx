@@ -25,7 +25,7 @@ export const Item = styled.li`
   margin: 0%;
   padding: 20px 0;
   gap: 5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #e0e5eb;
 
   &.active {
     fill: #ff751d;
@@ -57,7 +57,7 @@ export const ItemIncome = styled.li`
   margin: 0%;
   padding: 20px 0;
   gap: 5px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #e0e5eb;
 
   &.active {
     fill: #ff751d;
