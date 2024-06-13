@@ -1,5 +1,5 @@
 import BalanceReports from "../../components/Balance/BalanceReports/BalanceReports";
-import Chart from "../../components/Chart/Chart";
+import Chart from '../../components/Reports/Chart/Chart'
 import { ReportIncExp } from "../../components/Reports/ReportsIncExp/ReportIncExp";
 import { Background } from "./Reports.styled";
 
