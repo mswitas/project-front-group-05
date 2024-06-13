@@ -98,8 +98,9 @@ export const BudgetName = styled.p`
 `;
 
 export const IconsBox = styled.div`
-
+  margin-bottom: 20px;
   @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
     padding: 20px 40px;
     margin-top: 32px;
     border-radius: 30px;
