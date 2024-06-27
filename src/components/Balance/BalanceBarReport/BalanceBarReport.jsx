@@ -46,7 +46,7 @@ const BalanceBarReport = () => {
             name="balance"
             type="number"
             pattern="[0-9, .UAH]*"
-            placeholder={`${stateBalance}.00 UAH`}
+            placeholder={`${stateBalance ?? 0}.00 UAH`}
             required
           />
           <BalanceButton type="submit" onClick={handleModalOpen}>
@@ -62,8 +62,8 @@ const BalanceBarReport = () => {
           dispatch={onClick}
           text="SURE"
           balance={balance}
-        />
-      
+        >  Are you sure?
+      </BalanceModal>
       )}
     </>
   );

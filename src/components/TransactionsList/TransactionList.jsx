@@ -22,7 +22,7 @@ export const TransactionList = () => {
       case "Продукты":
         return "Products";
       case "Алкоголь":
-        return "ЗСУ";
+        return "Alcohol";
       case "Развлечения":
         return "Entertainment";
       case "Здоровье":

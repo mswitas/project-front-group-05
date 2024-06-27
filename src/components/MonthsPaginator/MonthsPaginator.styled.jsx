@@ -26,4 +26,5 @@ export const MonthsDisplayer = styled.p`
   text-align: center;
   color: #000000;
   margin: 2px;
+  text-transform: uppercase;
 `;
