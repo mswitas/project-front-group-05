@@ -3,14 +3,22 @@ import Chart from '../../components/Reports/Chart/Chart'
 import { ReportIncExp } from "../../components/Reports/ReportsIncExp/ReportIncExp";
 import { Background } from "./Reports.styled";
 
+
+
 const Reports = () => {
-  const data = [35, 51, 15, 60, 70, 12];
-  const labels = ["L1", "L2", "L3", "L4", "L5", "L6"];
+
+  //Data
+  const data = [
+    { name: "Chicken", value: 1000 },
+    { name: "Fuel", value: 800 },
+    { name: "Beef", value: 600 },
+  ];
+
   return (
     <Background>
       <BalanceReports />
       <ReportIncExp />
-      <Chart data={data} labels={labels} />
+      <Chart data={data} />
     </Background>
   );
 };
