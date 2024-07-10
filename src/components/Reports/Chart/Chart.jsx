@@ -6,7 +6,6 @@ const data = [
   { x: "Chicken", y: 1000, fillColor: "#FF751D" },
   { x: "Fuel", y: 500, fillColor: "#FFDAC0" },
   { x: "Beef", y: 800, fillColor: "#FFDAC0" },
-  //...
 ];
 
 const ChartComponent = () => {
