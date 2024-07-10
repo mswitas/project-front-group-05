@@ -14,7 +14,7 @@ export const TransactionListDesktop = ({ children }) => {
   //     case "Продукты":
   //       return "Products";
   //     case "Алкоголь":
-  //       return "ЗСУ";
+  //       return "Alcohol";
   //     case "Развлечения":
   //       return "Entertainment";
   //     case "Здоровье":
@@ -57,14 +57,14 @@ export const TransactionListDesktop = ({ children }) => {
   //   dispatch(deleteTransaction(event.currentTarget.id));
   // };
   // Sorted transactions
-//   const sortedTransactions = children[0].slice().sort((a, b) => {
-//     const first = new Date(a.date).getTime();
-//     const second = new Date(b.date).getTime();
-//     if (first - second === 0) {
-//       return first;
-//     }
-//     return second - first;
-//   });
+  //   const sortedTransactions = children[0].slice().sort((a, b) => {
+  //     const first = new Date(a.date).getTime();
+  //     const second = new Date(b.date).getTime();
+  //     if (first - second === 0) {
+  //       return first;
+  //     }
+  //     return second - first;
+  //   });
 
   return (
     // !isLoading && (
@@ -96,8 +96,8 @@ export const TransactionListDesktop = ({ children }) => {
                   onClick={handleDelete}
                   style={{ cursor: "pointer" }}
                 > */}
-                  {/* Delete icon */}
-                  {/* <svg width="18px" height="18px">
+        {/* Delete icon */}
+        {/* <svg width="18px" height="18px">
                     <use href={`${icons}#delete`}></use>
                   </svg>
                 </span>
@@ -105,7 +105,6 @@ export const TransactionListDesktop = ({ children }) => {
             </tr>
           );
         })} */}
-              
       </tbody>
     </TransactionTable>
     // )
