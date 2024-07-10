@@ -1,5 +1,5 @@
 import BalanceReports from "../../components/Balance/BalanceReports/BalanceReports";
-import Chart from '../../components/Reports/Chart/Chart'
+import ChartComponent from '../../components/Reports/Chart/Chart'
 import { ReportIncExp } from "../../components/Reports/ReportsIncExp/ReportIncExp";
 import { Background } from "./Reports.styled";
 
@@ -18,7 +18,7 @@ const Reports = () => {
     <Background>
       <BalanceReports />
       <ReportIncExp />
-      <Chart data={data} />
+      <ChartComponent data={data} />
     </Background>
   );
 };

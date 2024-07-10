@@ -17,13 +17,16 @@ export const SectionWrapper = styled.div`
   }
 `;
 export const ChartWrapper = styled.div`
-  height: 100%;
-  width: 100%;
+  width: 280px;
+  height: 493px;
   @media screen and (min-width: 768px) {
     width: 638px;
-    height: 380px;
+    height: 422px;
+    padding-block: 20px;
   }
   @media screen and (min-width: 1280px) {
     width: 756px;
+    height: 422px;
+    padding-block: 0px;
   }
 `;
