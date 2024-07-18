@@ -4,5 +4,5 @@ export const selectUser = (store) => store.auth.user.email;
 
 export const selectToken = (store) => store.auth.token;
 
-export const selectIsFetcingCurrentUser = (store) =>
+export const selectIsFetchingCurrentUser = (store) =>
   store.auth.isFetchingCurrentUser;
