@@ -6,6 +6,7 @@ export const SectionWrapper = styled.div`
   background: #ffffff;
   display: flex;
   justify-content: center;
+  margin-bottom: 52px;
   @media screen and (min-width: 768px) {
     box-shadow: 0px 10px 60px 0px #aab2c533;
     width: 704px;
@@ -22,11 +23,9 @@ export const ChartWrapper = styled.div`
   @media screen and (min-width: 768px) {
     width: 638px;
     height: 422px;
-    padding-block: 20px;
   }
   @media screen and (min-width: 1280px) {
     width: 756px;
     height: 422px;
-    padding-block: 0px;
   }
 `;

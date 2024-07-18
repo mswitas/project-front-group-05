@@ -3,24 +3,38 @@ import Chart from "react-apexcharts";
 import { useMatchMedia } from "../../../hooks/MediaQuery";
 
 const data = [
-  { x: "Chicken", y: 1000, fillColor: "#FF751D" },
-  { x: "Fuel", y: 500, fillColor: "#FFDAC0" },
-  { x: "Beef", y: 800, fillColor: "#FFDAC0" },
+  { x: "Chicken", y: 1000 },
+  { x: "Fuel", y: 500 },
+  { x: "Beef", y: 800 },
+  { x: "Turkey", y: 250 },
+  { x: "Honey", y: 550 },
 ];
 
 const ChartComponent = () => {
+  //Data handling
+  const sortedData = data.sort((a, b) => b.y - a.y);
+
   //Media
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
   const options = {
     chart: {
-      width: "100%",
-      height: "100%",
+      padding: {
+        left: 0,
+        right: 300,
+        top: 30,
+        bottom: 50,
+      },
+      width: "90%",
+      height: "90%",
       type: "bar",
-
+      redrawOnParentResize: true,
       toolbar: {
         show: false,
       },
+    },
+    tooltip: {
+      enabled: false,
     },
     legend: {
       show: false,
@@ -36,6 +50,7 @@ const ChartComponent = () => {
         backgroundBarOpacity: 1,
         dataLabels: {
           position: "top",
+          minWidth: 0,
         },
       },
     },
@@ -51,10 +66,10 @@ const ChartComponent = () => {
         colors: ["#52555F"],
       },
       offsetY: -25,
-      distributed: true,
+      distributed: false,
     },
     xaxis: {
-      categories: data.map((item) => item.x),
+      categories: sortedData.map((item) => item.x),
       axisTicks: {
         show: false,
       },
@@ -62,7 +77,7 @@ const ChartComponent = () => {
         show: false,
       },
       labels: {
-        show: false,
+        show: true,
       },
     },
     yaxis: {
@@ -70,7 +85,7 @@ const ChartComponent = () => {
     },
     fill: {
       type: "solid",
-      colors: data.map((item) => item.fillColor),
+      colors: ["#FF751D", "#FFDAC0", "#FFDAC0"],
     },
     grid: {
       show: true,
@@ -81,7 +96,9 @@ const ChartComponent = () => {
         options: {
           yaxis: {
             labels: {
-              show: true, 
+              minWidth: 0,
+              show: true,
+              textAnchor: "end",
               offsetX: 60,
               offsetY: -20,
               style: {
@@ -94,6 +111,10 @@ const ChartComponent = () => {
           },
           xaxis: {
             show: false,
+            labels: {
+              minWidth: 0,
+              show: false,
+            },
           },
           grid: {
             show: false,
@@ -106,7 +127,8 @@ const ChartComponent = () => {
           },
           dataLabels: {
             enabled: true,
-            offsetY: -15,
+            offsetY: -20,
+            offsetX: 40,
             position: "center",
           },
         },
@@ -116,7 +138,7 @@ const ChartComponent = () => {
 
   const series = [
     {
-      data: data.map((item) => item.y),
+      data: sortedData.map((item) => item.y),
     },
   ];
 
