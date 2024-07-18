@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const SectionWrapper = styled.div`
+  z-index: 2;
+  position: relative;
   height: 493px;
   width: 280px;
   background: #ffffff;
@@ -12,12 +14,14 @@ export const SectionWrapper = styled.div`
     width: 704px;
     height: 422px;
     border-radius: 30px;
+    padding-bottom: 40px;
   }
   @media screen and (min-width: 1280px) {
     width: 1034px;
   }
 `;
 export const ChartWrapper = styled.div`
+  z-index: 2;
   width: 280px;
   height: 493px;
   @media screen and (min-width: 768px) {
