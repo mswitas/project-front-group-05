@@ -31,6 +31,8 @@ export const LoginName = styled.p`
 
 export const LogoutImg = styled.button`
   cursor: pointer;
+  outline: none;
+  border: none;
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -64,4 +66,5 @@ export const ExitButton = styled.button`
 export const PageIcon = styled.svg`
   width: 20px;
   height: 20px;
+  outline: none;
 `;

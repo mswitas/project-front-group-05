@@ -4,7 +4,7 @@ axios.defaults.baseURL = "https://demokraci-kapusta.onrender.com/";
 
 export const registerAPI = async (user) => {
   try {
-    const { data } = await axios.post("/auth/register", user);
+    const { data } = await axios.post("/api/register", user);
     return data;
   } catch (error) {
     if (error.response.status === 409) {
@@ -14,17 +14,17 @@ export const registerAPI = async (user) => {
 };
 
 export const loginAPI = async (user) => {
-  const { data } = await axios.post("auth/login", user);
+  const { data } = await axios.post("api/login", user);
   return data;
 };
 
 export const logoutAPI = async () => {
-  const { data } = await axios.post("auth/logout");
+  const { data } = await axios.post("api/logout");
   return data;
 };
 
 export const googleLoginAPI = async () => {
-  const response = await axios.get("/auth/google", {
+  const response = await axios.get("/api/google", {
     headers: {
       accept: "*/*",
     },

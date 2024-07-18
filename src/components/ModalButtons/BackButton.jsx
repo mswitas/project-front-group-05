@@ -19,24 +19,24 @@ export const BackButton = () => {
   return (
     <>
       {isVisible && (
-          <ButtonBackWithText to="/expenses/transactions">
-            <svg width="18" height="12">
-              <use href={`${icons}#back-arrow`}></use>
-            </svg>
-            <ButtonBackText>TO TRANSACTIONS</ButtonBackText>
-          </ButtonBackWithText>
-        )}
-      {isExpenses  && (
-          <ButtonBackWithText to="/expenses/transactions">
-            <svg width="18" height="12">
-              <use href={`${icons}#back-arrow`}></use>
-            </svg>
-            <ButtonBackText>TO TRANSACTIONS</ButtonBackText>
-          </ButtonBackWithText>
-        )}
+        <ButtonBackWithText to="/expenses/transactions">
+          <svg width="13.5" height="9">
+            <use href={`${icons}#back-arrow`}></use>
+          </svg>
+          <ButtonBackText>TO TRANSACTIONS</ButtonBackText>
+        </ButtonBackWithText>
+      )}
+      {isExpenses && (
+        <ButtonBackWithText to="/expenses/transactions">
+          <svg width="13.5" height="9">
+            <use href={`${icons}#back-arrow`}></use>
+          </svg>
+          <ButtonBackText>TO TRANSACTIONS</ButtonBackText>
+        </ButtonBackWithText>
+      )}
       {isIncome && (
         <ButtonBackWithText to="/income/transactions">
-          <svg width="18" height="12">
+          <svg width="13.5" height="9">
             <use href={`${icons}#back-arrow`}></use>
           </svg>
           <ButtonBackText>TO TRANSACTIONS</ButtonBackText>

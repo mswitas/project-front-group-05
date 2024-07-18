@@ -4,7 +4,7 @@ export const SharedLayoutContainer = styled.div`
   display: flex;
   box-shadow: 5px 10px 20px 0px #aab2c566;
   flex-direction: column;
-  height: 100vh;
+  height: 300vh;
   width: 320px;
   margin: 0px auto;
   background-color: rgba(255, 255, 255, 1);
